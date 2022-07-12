@@ -11,6 +11,13 @@
 		191F29EB287D9669006746CF /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 191F29E9287D9669006746CF /* LoginViewController.xib */; };
 		191F29F1287D980A006746CF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 191F29F0287D980A006746CF /* FirebaseAuth */; };
 		191F29F3287D980A006746CF /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 191F29F2287D980A006746CF /* FirebaseDatabase */; };
+		191F29F5287DA177006746CF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 191F29F4287DA177006746CF /* GoogleService-Info.plist */; };
+		191F29F9287DAA9E006746CF /* CodeValidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191F29F7287DAA9E006746CF /* CodeValidViewController.swift */; };
+		191F29FA287DAA9E006746CF /* CodeValidViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 191F29F8287DAA9E006746CF /* CodeValidViewController.xib */; };
+		191F29FE287DAD59006746CF /* UIColors+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191F29FD287DAD59006746CF /* UIColors+Extentions.swift */; };
+		191F2A00287DAE59006746CF /* UIButtons+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191F29FF287DAE59006746CF /* UIButtons+Extentions.swift */; };
+		191F2A04287DBC75006746CF /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191F2A02287DBC75006746CF /* ChatsViewController.swift */; };
+		191F2A05287DBC75006746CF /* ChatsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 191F2A03287DBC75006746CF /* ChatsViewController.xib */; };
 		19F0A5CD287CD48200A5D4E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0A5CC287CD48200A5D4E6 /* AppDelegate.swift */; };
 		19F0A5CF287CD48200A5D4E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0A5CE287CD48200A5D4E6 /* SceneDelegate.swift */; };
 		19F0A5D1287CD48200A5D4E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0A5D0287CD48200A5D4E6 /* ViewController.swift */; };
@@ -23,6 +30,13 @@
 /* Begin PBXFileReference section */
 		191F29E8287D9669006746CF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		191F29E9287D9669006746CF /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		191F29F4287DA177006746CF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		191F29F7287DAA9E006746CF /* CodeValidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeValidViewController.swift; sourceTree = "<group>"; };
+		191F29F8287DAA9E006746CF /* CodeValidViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CodeValidViewController.xib; sourceTree = "<group>"; };
+		191F29FD287DAD59006746CF /* UIColors+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColors+Extentions.swift"; sourceTree = "<group>"; };
+		191F29FF287DAE59006746CF /* UIButtons+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButtons+Extentions.swift"; sourceTree = "<group>"; };
+		191F2A02287DBC75006746CF /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
+		191F2A03287DBC75006746CF /* ChatsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatsViewController.xib; sourceTree = "<group>"; };
 		19F0A5C9287CD48200A5D4E6 /* STS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F0A5CC287CD48200A5D4E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19F0A5CE287CD48200A5D4E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +67,8 @@
 		191F29DF287D8A4A006746CF /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
+				19F0A5CC287CD48200A5D4E6 /* AppDelegate.swift */,
+				19F0A5CE287CD48200A5D4E6 /* SceneDelegate.swift */,
 				19F0A5D5287CD48400A5D4E6 /* Assets.xcassets */,
 				19F0A5D7287CD48400A5D4E6 /* LaunchScreen.storyboard */,
 				19F0A5DA287CD48400A5D4E6 /* Info.plist */,
@@ -67,6 +83,42 @@
 				191F29E9287D9669006746CF /* LoginViewController.xib */,
 			);
 			path = LoginViewController;
+			sourceTree = "<group>";
+		};
+		191F29F6287DAA8A006746CF /* CodeValidViewController */ = {
+			isa = PBXGroup;
+			children = (
+				191F29F7287DAA9E006746CF /* CodeValidViewController.swift */,
+				191F29F8287DAA9E006746CF /* CodeValidViewController.xib */,
+			);
+			path = CodeValidViewController;
+			sourceTree = "<group>";
+		};
+		191F29FB287DAAE5006746CF /* StartViewController */ = {
+			isa = PBXGroup;
+			children = (
+				19F0A5D0287CD48200A5D4E6 /* ViewController.swift */,
+				19F0A5D2287CD48200A5D4E6 /* Main.storyboard */,
+			);
+			path = StartViewController;
+			sourceTree = "<group>";
+		};
+		191F29FC287DAD43006746CF /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				191F29FD287DAD59006746CF /* UIColors+Extentions.swift */,
+				191F29FF287DAE59006746CF /* UIButtons+Extentions.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		191F2A01287DBC42006746CF /* ChatsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				191F2A02287DBC75006746CF /* ChatsViewController.swift */,
+				191F2A03287DBC75006746CF /* ChatsViewController.xib */,
+			);
+			path = ChatsViewController;
 			sourceTree = "<group>";
 		};
 		19F0A5C0287CD48200A5D4E6 = {
@@ -90,12 +142,13 @@
 		19F0A5CB287CD48200A5D4E6 /* STS */ = {
 			isa = PBXGroup;
 			children = (
+				191F29FC287DAD43006746CF /* Extentions */,
+				191F29FB287DAAE5006746CF /* StartViewController */,
 				191F29E7287D95ED006746CF /* LoginViewController */,
-				19F0A5CC287CD48200A5D4E6 /* AppDelegate.swift */,
-				19F0A5CE287CD48200A5D4E6 /* SceneDelegate.swift */,
-				19F0A5D0287CD48200A5D4E6 /* ViewController.swift */,
-				19F0A5D2287CD48200A5D4E6 /* Main.storyboard */,
+				191F29F6287DAA8A006746CF /* CodeValidViewController */,
+				191F2A01287DBC42006746CF /* ChatsViewController */,
 				191F29DF287D8A4A006746CF /* SupportFiles */,
+				191F29F4287DA177006746CF /* GoogleService-Info.plist */,
 			);
 			path = STS;
 			sourceTree = "<group>";
@@ -106,7 +159,6 @@
 				9F69A001B0894250E400DF8E /* Pods-STS.debug.xcconfig */,
 				6401518095880B26BE389E1B /* Pods-STS.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -185,8 +237,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				191F29FA287DAA9E006746CF /* CodeValidViewController.xib in Resources */,
 				191F29EB287D9669006746CF /* LoginViewController.xib in Resources */,
+				191F2A05287DBC75006746CF /* ChatsViewController.xib in Resources */,
 				19F0A5D9287CD48400A5D4E6 /* LaunchScreen.storyboard in Resources */,
+				191F29F5287DA177006746CF /* GoogleService-Info.plist in Resources */,
 				19F0A5D6287CD48400A5D4E6 /* Assets.xcassets in Resources */,
 				19F0A5D4287CD48200A5D4E6 /* Main.storyboard in Resources */,
 			);
@@ -241,9 +296,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				191F29F9287DAA9E006746CF /* CodeValidViewController.swift in Sources */,
 				191F29EA287D9669006746CF /* LoginViewController.swift in Sources */,
 				19F0A5D1287CD48200A5D4E6 /* ViewController.swift in Sources */,
 				19F0A5CD287CD48200A5D4E6 /* AppDelegate.swift in Sources */,
+				191F29FE287DAD59006746CF /* UIColors+Extentions.swift in Sources */,
+				191F2A00287DAE59006746CF /* UIButtons+Extentions.swift in Sources */,
+				191F2A04287DBC75006746CF /* ChatsViewController.swift in Sources */,
 				19F0A5CF287CD48200A5D4E6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
