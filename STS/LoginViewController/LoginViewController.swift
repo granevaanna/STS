@@ -37,8 +37,9 @@ final class LoginViewController: UIViewController {
         }
     }
     
-    private func showCodeValidViewController(){
+    private func showCodeValidViewController(verificationID: String){
         let codeValidViewController = CodeValidViewController()
+        codeValidViewController.verificationID = verificationID
         codeValidViewController.modalPresentationStyle = .fullScreen
         codeValidViewController.modalTransitionStyle = .crossDissolve
         present(codeValidViewController, animated: true, completion: nil)
@@ -60,7 +61,8 @@ final class LoginViewController: UIViewController {
             if error != nil{
                 print(error?.localizedDescription)
             } else {
-                self.showCodeValidViewController()
+                guard let verificationID = verificationID else { return }
+                self.showCodeValidViewController(verificationID: verificationID)
             }
         }
     }

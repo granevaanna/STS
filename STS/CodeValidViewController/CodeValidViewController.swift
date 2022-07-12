@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 final class CodeValidViewController: UIViewController {
+    var verificationID: String?
+    
     @IBOutlet private weak var codeTextView: UITextView!
     @IBOutlet private weak var confirmCodeButton: UIButton!
     @IBOutlet private weak var sendCodeAgainButton: UIButton!
+    @IBOutlet private weak var incorrectCodeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +36,17 @@ final class CodeValidViewController: UIViewController {
     }
     
     @IBAction private func confirmCodeButtonAction(_ sender: UIButton) {
-        showChatsViewController()
+        guard let verificationID = verificationID,
+              let code = codeTextView.text else { return }
+        let credetional = PhoneAuthProvider.provider().credential(withVerificationID: verificationID, verificationCode: code)
+        Auth.auth().signIn(with: credetional) { _, error in
+            if error != nil {
+                self.incorrectCodeLabel.isHidden = false
+            } else {
+                self.incorrectCodeLabel.isHidden = true
+                self.showChatsViewController()
+            }
+        }
     }
     
     @IBAction private func sendCodeAgainButtonAction(_ sender: UIButton) {
