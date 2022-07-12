@@ -18,15 +18,6 @@ class ViewController: UIViewController {
         showStartAnimation()
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        DispatchQueue.main.async {
-//            if Auth.auth().currentUser?.uid != nil{
-//                self.showChatsViewController()
-//            }
-//        }
-//    }
-    
     private func showChatsViewController(){
         let chatsViewController = ChatsViewController()
         chatsViewController.modalPresentationStyle = .fullScreen
@@ -38,12 +29,14 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 0.5, delay: 1.5, options: .curveLinear) {
             self.logoImageView.transform = self.logoImageView.transform.rotated(by: CGFloat(Double.pi / 2))
         } completion: { finished in
-            if Auth.auth().currentUser?.uid != nil{
-                self.showChatsViewController()
-            } else {
-                self.loginButton.isHidden = false
-                self.rotatedLogoImageToLeft()
-            }
+//            if Auth.auth().currentUser?.uid != nil{
+//                self.showChatsViewController()
+//            } else {
+//                self.loginButton.isHidden = false
+//                self.rotatedLogoImageToLeft()
+//            }
+            self.loginButton.isHidden = false
+            self.rotatedLogoImageToLeft()
         }
     }
     private func rotatedLogoImageToLeft(){

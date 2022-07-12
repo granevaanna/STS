@@ -10,14 +10,21 @@ import FirebaseAuth
 
 final class CodeValidViewController: UIViewController {
     var verificationID: String?
+    var phoneNumber: String?
+    
+    var timer = Timer()
+    var durationTimer = 60
     
     @IBOutlet private weak var codeTextView: UITextView!
     @IBOutlet private weak var confirmCodeButton: UIButton!
     @IBOutlet private weak var sendCodeAgainButton: UIButton!
     @IBOutlet private weak var incorrectCodeLabel: UILabel!
+    @IBOutlet private weak var timerLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        startTimer()
+        
         setupConfig()
     }
     
@@ -26,6 +33,26 @@ final class CodeValidViewController: UIViewController {
         sendCodeAgainButton.blockButton()
         
         codeTextView.delegate = self
+    }
+    
+    private func startTimer(){
+        durationTimer = 60
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+    }
+    
+    @objc func timerAction(){
+        durationTimer -= 1
+        if durationTimer < 10{
+            timerLabel.text = "Не получили код? - Запросите повторную отправку через 00:0\(durationTimer):"
+        } else{
+            timerLabel.text = "Не получили код? - Запросите повторную отправку через 00:\(durationTimer):"
+        }
+        
+        if durationTimer == 0{
+            timer.invalidate()
+            timerLabel.text = "Не получили код? - Запросите повторную отправку:"
+            sendCodeAgainButton.mainButton()
+        }
     }
     
     private func showChatsViewController(){
@@ -50,6 +77,18 @@ final class CodeValidViewController: UIViewController {
     }
     
     @IBAction private func sendCodeAgainButtonAction(_ sender: UIButton) {
+        sendCodeAgainButton.blockButton()
+        startTimer()
+        
+        guard let phoneNumber = phoneNumber else { return }
+
+        PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { verificationID, error in
+            if error != nil{
+                print(error?.localizedDescription ?? "is empty")
+            } else {
+                self.verificationID = verificationID
+            }
+        }
     }
 }
 

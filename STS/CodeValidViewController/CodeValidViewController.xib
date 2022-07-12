@@ -14,6 +14,7 @@
                 <outlet property="confirmCodeButton" destination="4tK-iu-wg1" id="cj0-EK-5HH"/>
                 <outlet property="incorrectCodeLabel" destination="4CY-Y6-cq7" id="5bN-VY-G4Z"/>
                 <outlet property="sendCodeAgainButton" destination="1yf-hk-chV" id="kAv-1A-s7t"/>
+                <outlet property="timerLabel" destination="FHd-Lg-IOk" id="Muw-QD-vPX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -59,7 +60,7 @@
                                 <action selector="confirmCodeButtonAction:" destination="-1" eventType="touchUpInside" id="4q6-cE-rpB"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Не получили код? - Запросите повторную отправку через ..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHd-Lg-IOk">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Не получили код? - Запросите повторную отправку через 01:00:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHd-Lg-IOk">
                             <rect key="frame" x="0.0" y="234" width="384" height="41"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

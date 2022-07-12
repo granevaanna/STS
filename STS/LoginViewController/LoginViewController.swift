@@ -12,7 +12,8 @@ import FlagPhoneNumber
 final class LoginViewController: UIViewController {
     private var listController: FPNCountryListViewController!
     private var phoneNumber: String?
-    private var agreementFlag: Bool = false
+    private var isAgreement: Bool = false
+    private var isValidCode:Bool = false
 
     @IBOutlet private weak var phoneNumberTextField: FPNTextField!
     @IBOutlet private weak var continueButton: UIButton!
@@ -40,17 +41,23 @@ final class LoginViewController: UIViewController {
     private func showCodeValidViewController(verificationID: String){
         let codeValidViewController = CodeValidViewController()
         codeValidViewController.verificationID = verificationID
+        codeValidViewController.phoneNumber = phoneNumber
         codeValidViewController.modalPresentationStyle = .fullScreen
         codeValidViewController.modalTransitionStyle = .crossDissolve
         present(codeValidViewController, animated: true, completion: nil)
     }
     
     @IBAction private func agreementButtonAction(_ sender: UIButton) {
-        agreementFlag.toggle()
-        if agreementFlag{
+        isAgreement.toggle()
+        if isAgreement{
             agreementButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+            if isValidCode{
+                continueButton.mainButton()
+                phoneNumber = phoneNumberTextField.getFormattedPhoneNumber(format: .International)
+            }
         } else {
             agreementButton.setImage(UIImage(systemName: "square"), for: .normal)
+            continueButton.blockButton()
         }
     }
     
@@ -59,7 +66,7 @@ final class LoginViewController: UIViewController {
 
         PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { verificationID, error in
             if error != nil{
-                print(error?.localizedDescription)
+                print(error?.localizedDescription ?? "is empty")
             } else {
                 guard let verificationID = verificationID else { return }
                 self.showCodeValidViewController(verificationID: verificationID)
@@ -68,19 +75,19 @@ final class LoginViewController: UIViewController {
     }
 }
 
+
 //MARK: - FPNTextFieldDelegate
 extension LoginViewController: FPNTextFieldDelegate{
     func fpnDidSelectCountry(name: String, dialCode: String, code: String) {
     }
     
     func fpnDidValidatePhoneNumber(textField: FPNTextField, isValid: Bool) {
+        isValidCode = isValid
         if isValid{
-//            if agreementFlag{
-//                continueButton.mainButton()
-//                phoneNumber = textField.getFormattedPhoneNumber(format: .International)
-//            }
-            continueButton.mainButton()
-            phoneNumber = textField.getFormattedPhoneNumber(format: .International)
+            if isAgreement{
+                continueButton.mainButton()
+                phoneNumber = textField.getFormattedPhoneNumber(format: .International)
+            }
         } else {
             continueButton.blockButton()
         }
