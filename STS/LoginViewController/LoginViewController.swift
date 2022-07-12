@@ -62,12 +62,9 @@ final class LoginViewController: UIViewController {
     }
     
     @IBAction private func continueButtonAction(_ sender: UIButton) {
-        guard let phoneNumber = phoneNumber else { return }
-
-        PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { verificationID, error in
-            if error != nil{
-                print(error?.localizedDescription ?? "is empty")
-            } else {
+        FirebaseManager.verifyPhoneNumber(phoneNumber: phoneNumber) { [weak self] verificationID in
+            guard let self = self else {return}
+            DispatchQueue.main.async {
                 guard let verificationID = verificationID else { return }
                 self.showCodeValidViewController(verificationID: verificationID)
             }

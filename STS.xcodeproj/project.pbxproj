@@ -18,6 +18,7 @@
 		191F2A00287DAE59006746CF /* UIButtons+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191F29FF287DAE59006746CF /* UIButtons+Extentions.swift */; };
 		191F2A04287DBC75006746CF /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191F2A02287DBC75006746CF /* ChatsViewController.swift */; };
 		191F2A05287DBC75006746CF /* ChatsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 191F2A03287DBC75006746CF /* ChatsViewController.xib */; };
+		191F2A07287DF817006746CF /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191F2A06287DF817006746CF /* FirebaseManager.swift */; };
 		19F0A5CD287CD48200A5D4E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0A5CC287CD48200A5D4E6 /* AppDelegate.swift */; };
 		19F0A5CF287CD48200A5D4E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0A5CE287CD48200A5D4E6 /* SceneDelegate.swift */; };
 		19F0A5D1287CD48200A5D4E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0A5D0287CD48200A5D4E6 /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 		191F29FF287DAE59006746CF /* UIButtons+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButtons+Extentions.swift"; sourceTree = "<group>"; };
 		191F2A02287DBC75006746CF /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
 		191F2A03287DBC75006746CF /* ChatsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatsViewController.xib; sourceTree = "<group>"; };
+		191F2A06287DF817006746CF /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		19F0A5C9287CD48200A5D4E6 /* STS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F0A5CC287CD48200A5D4E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19F0A5CE287CD48200A5D4E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 		19F0A5CB287CD48200A5D4E6 /* STS */ = {
 			isa = PBXGroup;
 			children = (
+				191F2A06287DF817006746CF /* FirebaseManager.swift */,
 				191F29FC287DAD43006746CF /* Extentions */,
 				191F29FB287DAAE5006746CF /* StartViewController */,
 				191F29E7287D95ED006746CF /* LoginViewController */,
@@ -299,6 +302,7 @@
 				191F29F9287DAA9E006746CF /* CodeValidViewController.swift in Sources */,
 				191F29EA287D9669006746CF /* LoginViewController.swift in Sources */,
 				19F0A5D1287CD48200A5D4E6 /* ViewController.swift in Sources */,
+				191F2A07287DF817006746CF /* FirebaseManager.swift in Sources */,
 				19F0A5CD287CD48200A5D4E6 /* AppDelegate.swift in Sources */,
 				191F29FE287DAD59006746CF /* UIColors+Extentions.swift in Sources */,
 				191F2A00287DAE59006746CF /* UIButtons+Extentions.swift in Sources */,

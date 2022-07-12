@@ -13,7 +13,7 @@ final class CodeValidViewController: UIViewController {
     var phoneNumber: String?
     
     var timer = Timer()
-    var durationTimer = 60
+    var durationTimer = 10
     
     @IBOutlet private weak var codeTextView: UITextView!
     @IBOutlet private weak var confirmCodeButton: UIButton!
@@ -36,7 +36,7 @@ final class CodeValidViewController: UIViewController {
     }
     
     private func startTimer(){
-        durationTimer = 60
+        durationTimer = 10
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
     }
     
@@ -63,10 +63,8 @@ final class CodeValidViewController: UIViewController {
     }
     
     @IBAction private func confirmCodeButtonAction(_ sender: UIButton) {
-        guard let verificationID = verificationID,
-              let code = codeTextView.text else { return }
-        let credetional = PhoneAuthProvider.provider().credential(withVerificationID: verificationID, verificationCode: code)
-        Auth.auth().signIn(with: credetional) { _, error in
+        FirebaseManager.singIn(verificationID: verificationID, verificationCode: codeTextView.text) { [weak self] error in
+            guard let self = self else { return }
             if error != nil {
                 self.incorrectCodeLabel.isHidden = false
             } else {
@@ -80,14 +78,9 @@ final class CodeValidViewController: UIViewController {
         sendCodeAgainButton.blockButton()
         startTimer()
         
-        guard let phoneNumber = phoneNumber else { return }
-
-        PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { verificationID, error in
-            if error != nil{
-                print(error?.localizedDescription ?? "is empty")
-            } else {
-                self.verificationID = verificationID
-            }
+        FirebaseManager.verifyPhoneNumber(phoneNumber: phoneNumber) { [weak self] verificationID in
+            guard let self = self else { return }
+            self.verificationID = verificationID
         }
     }
 }

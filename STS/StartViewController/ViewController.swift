@@ -28,15 +28,14 @@ class ViewController: UIViewController {
     private func showStartAnimation(){
         UIView.animate(withDuration: 0.5, delay: 1.5, options: .curveLinear) {
             self.logoImageView.transform = self.logoImageView.transform.rotated(by: CGFloat(Double.pi / 2))
-        } completion: { finished in
-//            if Auth.auth().currentUser?.uid != nil{
-//                self.showChatsViewController()
-//            } else {
-//                self.loginButton.isHidden = false
-//                self.rotatedLogoImageToLeft()
-//            }
-            self.loginButton.isHidden = false
-            self.rotatedLogoImageToLeft()
+        } completion: { [weak self] finished in
+            guard let self = self else {return}
+            if Auth.auth().currentUser?.uid != nil{
+                self.showChatsViewController()
+            } else {
+                self.loginButton.isHidden = false
+                self.rotatedLogoImageToLeft()
+            }
         }
     }
     private func rotatedLogoImageToLeft(){
