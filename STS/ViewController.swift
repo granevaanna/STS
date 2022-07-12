@@ -18,11 +18,17 @@ class ViewController: UIViewController {
     }
     
     private func showStartAnimation(){
-        UIView.animate(withDuration: 0.5, delay: 2, options: .curveLinear) {
+        UIView.animate(withDuration: 0.5, delay: 1.5, options: .curveLinear) {
             self.logoImageView.transform = self.logoImageView.transform.rotated(by: CGFloat(Double.pi / 2))
         } completion: { finished in
             self.loginButton.isHidden = false
+            self.rotatedLogoImageToLeft()
         }
+    }
+    private func rotatedLogoImageToLeft(){
+        UIView.animate(withDuration: 0.5, delay: 0.1, animations: {
+            self.logoImageView.transform = self.logoImageView.transform.rotated(by: CGFloat(-Double.pi / 2))
+        }, completion: nil)
     }
     
     

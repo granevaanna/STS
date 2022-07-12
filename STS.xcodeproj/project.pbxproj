@@ -37,6 +37,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		191F29DF287D8A4A006746CF /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				19F0A5D5287CD48400A5D4E6 /* Assets.xcassets */,
+				19F0A5D7287CD48400A5D4E6 /* LaunchScreen.storyboard */,
+				19F0A5DA287CD48400A5D4E6 /* Info.plist */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
 		19F0A5C0287CD48200A5D4E6 = {
 			isa = PBXGroup;
 			children = (
@@ -60,9 +70,7 @@
 				19F0A5CE287CD48200A5D4E6 /* SceneDelegate.swift */,
 				19F0A5D0287CD48200A5D4E6 /* ViewController.swift */,
 				19F0A5D2287CD48200A5D4E6 /* Main.storyboard */,
-				19F0A5D5287CD48400A5D4E6 /* Assets.xcassets */,
-				19F0A5D7287CD48400A5D4E6 /* LaunchScreen.storyboard */,
-				19F0A5DA287CD48400A5D4E6 /* Info.plist */,
+				191F29DF287D8A4A006746CF /* SupportFiles */,
 			);
 			path = STS;
 			sourceTree = "<group>";
@@ -290,7 +298,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = STS/Info.plist;
+				INFOPLIST_FILE = STS/SupportFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -317,7 +325,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = STS/Info.plist;
+				INFOPLIST_FILE = STS/SupportFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
