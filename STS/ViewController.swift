@@ -33,6 +33,10 @@ class ViewController: UIViewController {
     
     
     @IBAction private func loginButtonAction(_ sender: Any) {
+        let loginViewController = LoginViewController()
+        loginViewController.modalPresentationStyle = .fullScreen
+        loginViewController.modalTransitionStyle = .crossDissolve
+        present(loginViewController, animated: true, completion: nil)
     }
 }
 
