@@ -13,7 +13,7 @@ final class CodeValidViewController: UIViewController {
     var phoneNumber: String?
     
     var timer = Timer()
-    var durationTimer = 10
+    var durationTimer = 60
     
     @IBOutlet private weak var codeTextView: UITextView!
     @IBOutlet private weak var confirmCodeButton: UIButton!
@@ -36,7 +36,7 @@ final class CodeValidViewController: UIViewController {
     }
     
     private func startTimer(){
-        durationTimer = 10
+        durationTimer = 60
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
     }
     

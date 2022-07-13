@@ -70,6 +70,10 @@ final class LoginViewController: UIViewController {
             }
         }
     }
+    
+    
+    @IBAction private func singInWithGoogleButtonAction(_ sender: Any) {
+    }
 }
 
 

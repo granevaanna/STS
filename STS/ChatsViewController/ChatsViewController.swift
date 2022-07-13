@@ -26,8 +26,8 @@ final class ChatsViewController: UIViewController {
         do{
             try Auth.auth().signOut()
             showStartViewController()
-        } catch{
-            
-        }
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+          }
     }
 }
