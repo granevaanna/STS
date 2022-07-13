@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatsViewController" customModule="STS" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactsViewController" customModule="STS" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -17,25 +17,9 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QLH-v1-LPK">
-                    <rect key="frame" x="156" y="431.5" width="102" height="43"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Log out">
-                        <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
-                    </buttonConfiguration>
-                    <connections>
-                        <action selector="logOutButtonAction:" destination="-1" eventType="touchUpInside" id="W5C-vj-5dI"/>
-                    </connections>
-                </button>
-            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemOrangeColor"/>
-            <constraints>
-                <constraint firstItem="QLH-v1-LPK" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="1Aa-Px-LLK"/>
-                <constraint firstItem="QLH-v1-LPK" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Uo5-fV-6as"/>
-            </constraints>
-            <point key="canvasLocation" x="139" y="80"/>
+            <point key="canvasLocation" x="139" y="56"/>
         </view>
     </objects>
     <resources>

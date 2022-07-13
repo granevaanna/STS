@@ -55,11 +55,11 @@ final class CodeValidViewController: UIViewController {
         }
     }
     
-    private func showChatsViewController(){
-        let chatsViewController = ChatsViewController()
-        chatsViewController.modalPresentationStyle = .fullScreen
-        chatsViewController.modalTransitionStyle = .crossDissolve
-        present(chatsViewController, animated: true, completion: nil)
+    private func showContentViewController(){
+        let contentViewController = ContentViewController()
+        contentViewController.modalPresentationStyle = .fullScreen
+        contentViewController.modalTransitionStyle = .crossDissolve
+        present(contentViewController, animated: true, completion: nil)
     }
     
     @IBAction private func confirmCodeButtonAction(_ sender: UIButton) {
@@ -69,7 +69,7 @@ final class CodeValidViewController: UIViewController {
                 self.incorrectCodeLabel.isHidden = false
             } else {
                 self.incorrectCodeLabel.isHidden = true
-                self.showChatsViewController()
+                self.showContentViewController()
             }
         }
     }

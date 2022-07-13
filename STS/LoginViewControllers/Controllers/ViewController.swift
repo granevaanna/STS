@@ -18,11 +18,11 @@ class ViewController: UIViewController {
         showStartAnimation()
     }
     
-    private func showChatsViewController(){
-        let chatsViewController = ChatsViewController()
-        chatsViewController.modalPresentationStyle = .fullScreen
-        chatsViewController.modalTransitionStyle = .crossDissolve
-        present(chatsViewController, animated: true, completion: nil)
+    private func showContentViewController(){
+        let contentViewController = ContentViewController()
+        contentViewController.modalPresentationStyle = .fullScreen
+        contentViewController.modalTransitionStyle = .crossDissolve
+        present(contentViewController, animated: true, completion: nil)
     }
     
     private func showStartAnimation(){
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         } completion: { [weak self] finished in
             guard let self = self else {return}
             if Auth.auth().currentUser?.uid != nil{
-                self.showChatsViewController()
+                self.showContentViewController()
             } else {
                 self.loginButton.isHidden = false
                 self.rotatedLogoImageToLeft()
