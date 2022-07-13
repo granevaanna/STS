@@ -27,6 +27,10 @@
 		192C4F2D287F06A0002EF1B0 /* ContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192C4F2B287F069F002EF1B0 /* ContactsViewController.xib */; };
 		192C4F31287F0701002EF1B0 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192C4F2F287F0701002EF1B0 /* MyViewController.swift */; };
 		192C4F32287F0701002EF1B0 /* MyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192C4F30287F0701002EF1B0 /* MyViewController.xib */; };
+		192C4F36287F1825002EF1B0 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192C4F34287F1825002EF1B0 /* MenuViewController.swift */; };
+		192C4F37287F1825002EF1B0 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192C4F35287F1825002EF1B0 /* MenuViewController.xib */; };
+		192C4F3B287F27C6002EF1B0 /* StatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192C4F39287F27C6002EF1B0 /* StatusTableViewCell.swift */; };
+		192C4F3C287F27C6002EF1B0 /* StatusTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192C4F3A287F27C6002EF1B0 /* StatusTableViewCell.xib */; };
 		19F0A5CD287CD48200A5D4E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0A5CC287CD48200A5D4E6 /* AppDelegate.swift */; };
 		19F0A5CF287CD48200A5D4E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0A5CE287CD48200A5D4E6 /* SceneDelegate.swift */; };
 		19F0A5D1287CD48200A5D4E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0A5D0287CD48200A5D4E6 /* ViewController.swift */; };
@@ -55,6 +59,10 @@
 		192C4F2B287F069F002EF1B0 /* ContactsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactsViewController.xib; sourceTree = "<group>"; };
 		192C4F2F287F0701002EF1B0 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		192C4F30287F0701002EF1B0 /* MyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyViewController.xib; sourceTree = "<group>"; };
+		192C4F34287F1825002EF1B0 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		192C4F35287F1825002EF1B0 /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		192C4F39287F27C6002EF1B0 /* StatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTableViewCell.swift; sourceTree = "<group>"; };
+		192C4F3A287F27C6002EF1B0 /* StatusTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusTableViewCell.xib; sourceTree = "<group>"; };
 		19F0A5C9287CD48200A5D4E6 /* STS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F0A5CC287CD48200A5D4E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19F0A5CE287CD48200A5D4E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -181,6 +189,25 @@
 			path = My;
 			sourceTree = "<group>";
 		};
+		192C4F33287F17FC002EF1B0 /* MenuViewController */ = {
+			isa = PBXGroup;
+			children = (
+				192C4F38287F279B002EF1B0 /* StatusTableViewCell */,
+				192C4F34287F1825002EF1B0 /* MenuViewController.swift */,
+				192C4F35287F1825002EF1B0 /* MenuViewController.xib */,
+			);
+			path = MenuViewController;
+			sourceTree = "<group>";
+		};
+		192C4F38287F279B002EF1B0 /* StatusTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				192C4F39287F27C6002EF1B0 /* StatusTableViewCell.swift */,
+				192C4F3A287F27C6002EF1B0 /* StatusTableViewCell.xib */,
+			);
+			path = StatusTableViewCell;
+			sourceTree = "<group>";
+		};
 		19F0A5C0287CD48200A5D4E6 = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +233,7 @@
 				191F29FC287DAD43006746CF /* Extentions */,
 				192C4F1C287F048D002EF1B0 /* LoginViewControllers */,
 				191F2A01287DBC42006746CF /* ContentViewController */,
+				192C4F33287F17FC002EF1B0 /* MenuViewController */,
 				191F29DF287D8A4A006746CF /* SupportFiles */,
 				191F29F4287DA177006746CF /* GoogleService-Info.plist */,
 			);
@@ -300,9 +328,11 @@
 				192C4F28287F0618002EF1B0 /* ChatsViewController.xib in Resources */,
 				191F29FA287DAA9E006746CF /* CodeValidViewController.xib in Resources */,
 				191F29EB287D9669006746CF /* LoginViewController.xib in Resources */,
+				192C4F3C287F27C6002EF1B0 /* StatusTableViewCell.xib in Resources */,
 				191F2A05287DBC75006746CF /* ContentViewController.xib in Resources */,
 				19F0A5D9287CD48400A5D4E6 /* LaunchScreen.storyboard in Resources */,
 				191F29F5287DA177006746CF /* GoogleService-Info.plist in Resources */,
+				192C4F37287F1825002EF1B0 /* MenuViewController.xib in Resources */,
 				19F0A5D6287CD48400A5D4E6 /* Assets.xcassets in Resources */,
 				192C4F23287F05FC002EF1B0 /* CallsViewController.xib in Resources */,
 				19F0A5D4287CD48200A5D4E6 /* Main.storyboard in Resources */,
@@ -362,8 +392,10 @@
 				191F29F9287DAA9E006746CF /* CodeValidViewController.swift in Sources */,
 				191F29EA287D9669006746CF /* LoginViewController.swift in Sources */,
 				19F0A5D1287CD48200A5D4E6 /* ViewController.swift in Sources */,
+				192C4F36287F1825002EF1B0 /* MenuViewController.swift in Sources */,
 				191F2A07287DF817006746CF /* FirebaseManager.swift in Sources */,
 				192C4F22287F05FC002EF1B0 /* CallsViewController.swift in Sources */,
+				192C4F3B287F27C6002EF1B0 /* StatusTableViewCell.swift in Sources */,
 				192C4F2C287F06A0002EF1B0 /* ContactsViewController.swift in Sources */,
 				19F0A5CD287CD48200A5D4E6 /* AppDelegate.swift in Sources */,
 				192C4F27287F0618002EF1B0 /* ChatsViewController.swift in Sources */,
