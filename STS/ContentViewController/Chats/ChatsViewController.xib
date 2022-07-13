@@ -17,12 +17,59 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pPw-r4-jAn">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AOC-ew-yZk" userLabel="HeaderView">
+                    <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1aY-s5-WaO">
+                            <rect key="frame" x="20" y="10" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="Haa-tK-inO"/>
+                                <constraint firstAttribute="width" constant="40" id="zsu-yn-IJ9"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="line.3.horizontal" catalog="system"/>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Чаты" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8F-Ng-Ff8">
+                            <rect key="frame" x="181.5" y="17" width="51.5" height="26.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="JVY-Wa-aM0"/>
+                        <constraint firstItem="o8F-Ng-Ff8" firstAttribute="centerX" secondItem="AOC-ew-yZk" secondAttribute="centerX" id="lQq-Aq-55r"/>
+                        <constraint firstItem="1aY-s5-WaO" firstAttribute="leading" secondItem="AOC-ew-yZk" secondAttribute="leading" constant="20" id="q1H-2R-NO0"/>
+                        <constraint firstItem="1aY-s5-WaO" firstAttribute="centerY" secondItem="AOC-ew-yZk" secondAttribute="centerY" id="rs1-7J-swm"/>
+                        <constraint firstItem="o8F-Ng-Ff8" firstAttribute="centerY" secondItem="AOC-ew-yZk" secondAttribute="centerY" id="zbk-Vt-GBL"/>
+                    </constraints>
+                </view>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemPinkColor"/>
-            <point key="canvasLocation" x="139" y="56"/>
+            <constraints>
+                <constraint firstItem="pPw-r4-jAn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="2ad-L3-RvR"/>
+                <constraint firstItem="AOC-ew-yZk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="3Vq-yD-Glp"/>
+                <constraint firstItem="AOC-ew-yZk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="9W5-5W-wl4"/>
+                <constraint firstItem="pPw-r4-jAn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Bqf-vs-0qW"/>
+                <constraint firstItem="AOC-ew-yZk" firstAttribute="top" secondItem="pPw-r4-jAn" secondAttribute="bottom" id="Rap-IS-bIa"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AOC-ew-yZk" secondAttribute="trailing" id="rYM-J2-ICV"/>
+                <constraint firstAttribute="trailing" secondItem="pPw-r4-jAn" secondAttribute="trailing" id="z0N-rY-GJG"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="55.580357142857139"/>
         </view>
     </objects>
     <resources>
+        <image name="line.3.horizontal" catalog="system" width="128" height="64"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

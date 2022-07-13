@@ -17,12 +17,59 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8WQ-SE-LHq">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a8P-wy-6w0" userLabel="HeaderView">
+                    <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ba9-Qr-efQ">
+                            <rect key="frame" x="20" y="10" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="ZoO-9N-dUn"/>
+                                <constraint firstAttribute="height" constant="40" id="bwg-0Q-cgU"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="line.3.horizontal" catalog="system"/>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Моё" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLt-rD-Qnd">
+                            <rect key="frame" x="185.5" y="17" width="43" height="26.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="ba9-Qr-efQ" firstAttribute="leading" secondItem="a8P-wy-6w0" secondAttribute="leading" constant="20" id="5eA-Xp-UG6"/>
+                        <constraint firstItem="nLt-rD-Qnd" firstAttribute="centerY" secondItem="a8P-wy-6w0" secondAttribute="centerY" id="Cww-6a-l2S"/>
+                        <constraint firstItem="ba9-Qr-efQ" firstAttribute="centerY" secondItem="a8P-wy-6w0" secondAttribute="centerY" id="DFC-ne-bHe"/>
+                        <constraint firstAttribute="height" constant="60" id="Klc-rY-v9F"/>
+                        <constraint firstItem="nLt-rD-Qnd" firstAttribute="centerX" secondItem="a8P-wy-6w0" secondAttribute="centerX" id="OGN-zL-JAN"/>
+                    </constraints>
+                </view>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemYellowColor"/>
-            <point key="canvasLocation" x="139" y="72"/>
+            <constraints>
+                <constraint firstItem="8WQ-SE-LHq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="2x6-D4-suU"/>
+                <constraint firstAttribute="trailing" secondItem="8WQ-SE-LHq" secondAttribute="trailing" id="IMh-r5-wKo"/>
+                <constraint firstItem="8WQ-SE-LHq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="XUd-vS-h4E"/>
+                <constraint firstItem="a8P-wy-6w0" firstAttribute="top" secondItem="8WQ-SE-LHq" secondAttribute="bottom" id="nSo-1t-nj7"/>
+                <constraint firstItem="a8P-wy-6w0" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ov9-HX-MnI"/>
+                <constraint firstItem="a8P-wy-6w0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="w9e-s6-sRD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="a8P-wy-6w0" secondAttribute="trailing" id="wy7-kA-3J3"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="71.651785714285708"/>
         </view>
     </objects>
     <resources>
+        <image name="line.3.horizontal" catalog="system" width="128" height="64"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

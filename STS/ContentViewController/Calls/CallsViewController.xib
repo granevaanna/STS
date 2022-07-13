@@ -17,12 +17,60 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xkz-Q3-plF" userLabel="HeaderView">
+                    <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5PD-7I-OXU">
+                            <rect key="frame" x="20" y="10" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="Kb1-K8-eGS"/>
+                                <constraint firstAttribute="width" constant="40" id="cBO-Au-dMo"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="line.3.horizontal" catalog="system"/>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Звонки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4a-0d-s9f">
+                            <rect key="frame" x="171" y="17" width="72" height="26.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="5PD-7I-OXU" firstAttribute="centerY" secondItem="Xkz-Q3-plF" secondAttribute="centerY" id="2ql-xL-ZIu"/>
+                        <constraint firstItem="5PD-7I-OXU" firstAttribute="leading" secondItem="Xkz-Q3-plF" secondAttribute="leading" constant="20" id="5c0-V9-Rt2"/>
+                        <constraint firstItem="i4a-0d-s9f" firstAttribute="centerX" secondItem="Xkz-Q3-plF" secondAttribute="centerX" id="JzR-ch-c6O"/>
+                        <constraint firstItem="i4a-0d-s9f" firstAttribute="centerY" secondItem="Xkz-Q3-plF" secondAttribute="centerY" id="RNZ-Ek-A6K"/>
+                        <constraint firstAttribute="height" constant="60" id="VAd-oz-Zu8"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tTn-22-g2P">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemRedColor"/>
-            <point key="canvasLocation" x="139" y="56"/>
+            <constraints>
+                <constraint firstItem="tTn-22-g2P" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3e2-oW-4qV"/>
+                <constraint firstAttribute="trailing" secondItem="tTn-22-g2P" secondAttribute="trailing" id="DEd-0r-nWA"/>
+                <constraint firstItem="Xkz-Q3-plF" firstAttribute="top" secondItem="tTn-22-g2P" secondAttribute="bottom" id="Edg-r7-O78"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Xkz-Q3-plF" secondAttribute="trailing" id="Gll-Qu-5C4"/>
+                <constraint firstItem="Xkz-Q3-plF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ibb-mV-d7P"/>
+                <constraint firstItem="tTn-22-g2P" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Uuh-Xj-fDP"/>
+                <constraint firstItem="Xkz-Q3-plF" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="oxA-4r-dpg"/>
+                <constraint firstItem="tTn-22-g2P" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="p9N-XM-q22"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="55.580357142857139"/>
         </view>
     </objects>
     <resources>
+        <image name="line.3.horizontal" catalog="system" width="128" height="64"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
