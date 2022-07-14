@@ -7,11 +7,17 @@
 
 import UIKit
 
+protocol CallsViewScrollDelegate: AnyObject {
+    func didScrollto(indexPath: IndexPath)
+}
+
 final class CallsView: UIView{
     @IBOutlet private var contentView: UIView!
     @IBOutlet private weak var callsCollectionView: UICollectionView!
     
     private var callsDataSourse: [String] = ["First", "Second"]
+    
+    weak var delegate: CallsViewScrollDelegate?
     
     override init(frame: CGRect) {
             super.init(frame: frame)
@@ -36,6 +42,14 @@ final class CallsView: UIView{
         callsCollectionView.dataSource = self
         callsCollectionView.register(UINib(nibName: "CallsCollectionCell", bundle: nil), forCellWithReuseIdentifier: CallsCollectionCell.identifier)
     }
+    
+    func scrollTo(indexPath: IndexPath) {
+        DispatchQueue.main.async { [weak self] in
+            self?.callsCollectionView.scrollToItem(at: indexPath,
+                                                  at: .centeredHorizontally,
+                                                  animated: false)
+        }
+    }
 }
 
 //MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
@@ -56,6 +70,11 @@ extension CallsView: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        print(indexPath.row)
+        delegate?.didScrollto(indexPath: indexPath)
     }
 }
 

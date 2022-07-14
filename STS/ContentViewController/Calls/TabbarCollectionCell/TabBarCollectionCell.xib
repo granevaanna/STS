@@ -25,7 +25,7 @@
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydi-Fj-bP9">
                         <rect key="frame" x="0.0" y="171" width="301" height="5"/>
-                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <color key="backgroundColor" red="0.1764705926" green="0.30980393290000002" blue="0.59215688710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="5" id="GuR-PM-hqc"/>
                         </constraints>
@@ -33,6 +33,7 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" systemColor="systemGray5Color"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="ydi-Fj-bP9" secondAttribute="trailing" id="3iD-yd-S4a"/>
                 <constraint firstAttribute="bottom" secondItem="ydi-Fj-bP9" secondAttribute="bottom" id="hku-yz-LqE"/>
@@ -49,8 +50,8 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

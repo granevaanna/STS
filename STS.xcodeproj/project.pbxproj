@@ -35,8 +35,6 @@
 		192C4F412880417F002EF1B0 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192C4F3F2880417E002EF1B0 /* ProfileViewController.xib */; };
 		192C4F452880578D002EF1B0 /* TabBarCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192C4F432880578D002EF1B0 /* TabBarCollectionCell.swift */; };
 		192C4F462880578D002EF1B0 /* TabBarCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192C4F442880578D002EF1B0 /* TabBarCollectionCell.xib */; };
-		192C4F4928805C95002EF1B0 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192C4F4828805C95002EF1B0 /* TabBarView.swift */; };
-		192C4F4B28805CB0002EF1B0 /* TabBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192C4F4A28805CB0002EF1B0 /* TabBarView.xib */; };
 		192C4F4D28806057002EF1B0 /* TabBarCallsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192C4F4C28806057002EF1B0 /* TabBarCallsModel.swift */; };
 		192C4F5228806392002EF1B0 /* CallsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192C4F5028806392002EF1B0 /* CallsCollectionCell.swift */; };
 		192C4F5328806392002EF1B0 /* CallsCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192C4F5128806392002EF1B0 /* CallsCollectionCell.xib */; };
@@ -78,8 +76,6 @@
 		192C4F3F2880417E002EF1B0 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		192C4F432880578D002EF1B0 /* TabBarCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCollectionCell.swift; sourceTree = "<group>"; };
 		192C4F442880578D002EF1B0 /* TabBarCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarCollectionCell.xib; sourceTree = "<group>"; };
-		192C4F4828805C95002EF1B0 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
-		192C4F4A28805CB0002EF1B0 /* TabBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarView.xib; sourceTree = "<group>"; };
 		192C4F4C28806057002EF1B0 /* TabBarCallsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCallsModel.swift; sourceTree = "<group>"; };
 		192C4F5028806392002EF1B0 /* CallsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallsCollectionCell.swift; sourceTree = "<group>"; };
 		192C4F5128806392002EF1B0 /* CallsCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CallsCollectionCell.xib; sourceTree = "<group>"; };
@@ -178,9 +174,9 @@
 		192C4F1F287F05E5002EF1B0 /* Calls */ = {
 			isa = PBXGroup;
 			children = (
-				197E8EFD2880675800DFF7FA /* CallsView */,
 				192C4F4E28806354002EF1B0 /* Models */,
-				192C4F4728805C7A002EF1B0 /* TabBarView */,
+				192C4F4228805768002EF1B0 /* TabbarCollectionCell */,
+				197E8EFD2880675800DFF7FA /* CallsView */,
 				192C4F20287F05FC002EF1B0 /* CallsViewController.swift */,
 				192C4F21287F05FC002EF1B0 /* CallsViewController.xib */,
 			);
@@ -249,16 +245,6 @@
 				192C4F442880578D002EF1B0 /* TabBarCollectionCell.xib */,
 			);
 			path = TabbarCollectionCell;
-			sourceTree = "<group>";
-		};
-		192C4F4728805C7A002EF1B0 /* TabBarView */ = {
-			isa = PBXGroup;
-			children = (
-				192C4F4228805768002EF1B0 /* TabbarCollectionCell */,
-				192C4F4828805C95002EF1B0 /* TabBarView.swift */,
-				192C4F4A28805CB0002EF1B0 /* TabBarView.xib */,
-			);
-			path = TabBarView;
 			sourceTree = "<group>";
 		};
 		192C4F4E28806354002EF1B0 /* Models */ = {
@@ -412,7 +398,6 @@
 				192C4F5328806392002EF1B0 /* CallsCollectionCell.xib in Resources */,
 				191F29EB287D9669006746CF /* LoginViewController.xib in Resources */,
 				192C4F3C287F27C6002EF1B0 /* StatusTableViewCell.xib in Resources */,
-				192C4F4B28805CB0002EF1B0 /* TabBarView.xib in Resources */,
 				191F2A05287DBC75006746CF /* ContentViewController.xib in Resources */,
 				19F0A5D9287CD48400A5D4E6 /* LaunchScreen.storyboard in Resources */,
 				191F29F5287DA177006746CF /* GoogleService-Info.plist in Resources */,
@@ -486,7 +471,6 @@
 				192C4F2C287F06A0002EF1B0 /* ContactsViewController.swift in Sources */,
 				192C4F452880578D002EF1B0 /* TabBarCollectionCell.swift in Sources */,
 				197E8EFF2880676F00DFF7FA /* CallsView.swift in Sources */,
-				192C4F4928805C95002EF1B0 /* TabBarView.swift in Sources */,
 				19F0A5CD287CD48200A5D4E6 /* AppDelegate.swift in Sources */,
 				192C4F27287F0618002EF1B0 /* ChatsViewController.swift in Sources */,
 				191F29FE287DAD59006746CF /* UIColors+Extentions.swift in Sources */,
