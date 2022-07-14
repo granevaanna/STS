@@ -36,17 +36,29 @@ class MenuViewController: UIViewController {
             present(startViewController, animated: true, completion: nil)
         }
     
+    private func showAlertController(message: String, completion: @escaping (UIAlertAction) -> Void){
+        let alertController = UIAlertController(title: "Status Global", message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Нет", style: .cancel, handler: nil))
+        alertController.addAction(UIAlertAction(title: "ДА", style: .default, handler: {ok in
+            completion(ok)
+        }))
+        present(alertController, animated: true, completion: nil)
+    }
+    
     @IBAction private func backButtonAction(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction private func logOutButtonAction(_ sender: UIButton) {
-        do{
-            try Auth.auth().signOut()
-            showStartViewController()
-        } catch let signOutError as NSError {
-            print("Error signing out: %@", signOutError)
-          }
+        showAlertController(message: "Вы уверены, что хотите выйти?") {[weak self] ok in
+            guard let self = self else { return }
+            do{
+                try Auth.auth().signOut()
+                self.showStartViewController()
+            } catch let signOutError as NSError {
+                print("Error signing out: %@", signOutError)
+            }
+        }
     }
     
 }
@@ -78,12 +90,29 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row != dataSource.count {
+        if isOpenStatusList{
+            if indexPath.row < dataSource.count {
+                switch dataSource[indexPath.row] {
+                case .busy, .invisible:
+                    showAlertController(message: "") {[weak self] ok in
+                        guard let self = self else {return}
+                        self.isOpenStatusList.toggle()
+                        self.currentStatus = self.dataSource[indexPath.row]
+                        self.dataSource.remove(at: indexPath.row)
+                        self.dataSource.insert(self.currentStatus, at: 0)
+                        self.statusTableView.reloadData()
+                    }
+                case .online, .away:
+                    isOpenStatusList.toggle()
+                    currentStatus = dataSource[indexPath.row]
+                    dataSource.remove(at: indexPath.row)
+                    dataSource.insert(currentStatus, at: 0)
+                    statusTableView.reloadData()
+                }
+            }
+        } else {
             isOpenStatusList.toggle()
-            currentStatus = dataSource[indexPath.row]
-            dataSource.remove(at: indexPath.row)
-            dataSource.insert(currentStatus, at: 0)
+            statusTableView.reloadData()
         }
-        statusTableView.reloadData()
     }
 }
