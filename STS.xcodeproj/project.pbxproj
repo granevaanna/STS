@@ -31,6 +31,8 @@
 		192C4F37287F1825002EF1B0 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192C4F35287F1825002EF1B0 /* MenuViewController.xib */; };
 		192C4F3B287F27C6002EF1B0 /* StatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192C4F39287F27C6002EF1B0 /* StatusTableViewCell.swift */; };
 		192C4F3C287F27C6002EF1B0 /* StatusTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192C4F3A287F27C6002EF1B0 /* StatusTableViewCell.xib */; };
+		192C4F402880417F002EF1B0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192C4F3E2880417E002EF1B0 /* ProfileViewController.swift */; };
+		192C4F412880417F002EF1B0 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192C4F3F2880417E002EF1B0 /* ProfileViewController.xib */; };
 		19F0A5CD287CD48200A5D4E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0A5CC287CD48200A5D4E6 /* AppDelegate.swift */; };
 		19F0A5CF287CD48200A5D4E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0A5CE287CD48200A5D4E6 /* SceneDelegate.swift */; };
 		19F0A5D1287CD48200A5D4E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0A5D0287CD48200A5D4E6 /* ViewController.swift */; };
@@ -63,6 +65,8 @@
 		192C4F35287F1825002EF1B0 /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		192C4F39287F27C6002EF1B0 /* StatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTableViewCell.swift; sourceTree = "<group>"; };
 		192C4F3A287F27C6002EF1B0 /* StatusTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusTableViewCell.xib; sourceTree = "<group>"; };
+		192C4F3E2880417E002EF1B0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		192C4F3F2880417E002EF1B0 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		19F0A5C9287CD48200A5D4E6 /* STS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F0A5CC287CD48200A5D4E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19F0A5CE287CD48200A5D4E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -208,6 +212,15 @@
 			path = StatusTableViewCell;
 			sourceTree = "<group>";
 		};
+		192C4F3D28804158002EF1B0 /* ProfileViewController */ = {
+			isa = PBXGroup;
+			children = (
+				192C4F3E2880417E002EF1B0 /* ProfileViewController.swift */,
+				192C4F3F2880417E002EF1B0 /* ProfileViewController.xib */,
+			);
+			path = ProfileViewController;
+			sourceTree = "<group>";
+		};
 		19F0A5C0287CD48200A5D4E6 = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +247,7 @@
 				192C4F1C287F048D002EF1B0 /* LoginViewControllers */,
 				191F2A01287DBC42006746CF /* ContentViewController */,
 				192C4F33287F17FC002EF1B0 /* MenuViewController */,
+				192C4F3D28804158002EF1B0 /* ProfileViewController */,
 				191F29DF287D8A4A006746CF /* SupportFiles */,
 				191F29F4287DA177006746CF /* GoogleService-Info.plist */,
 			);
@@ -324,6 +338,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				192C4F412880417F002EF1B0 /* ProfileViewController.xib in Resources */,
 				192C4F32287F0701002EF1B0 /* MyViewController.xib in Resources */,
 				192C4F28287F0618002EF1B0 /* ChatsViewController.xib in Resources */,
 				191F29FA287DAA9E006746CF /* CodeValidViewController.xib in Resources */,
@@ -395,6 +410,7 @@
 				192C4F36287F1825002EF1B0 /* MenuViewController.swift in Sources */,
 				191F2A07287DF817006746CF /* FirebaseManager.swift in Sources */,
 				192C4F22287F05FC002EF1B0 /* CallsViewController.swift in Sources */,
+				192C4F402880417F002EF1B0 /* ProfileViewController.swift in Sources */,
 				192C4F3B287F27C6002EF1B0 /* StatusTableViewCell.swift in Sources */,
 				192C4F2C287F06A0002EF1B0 /* ContactsViewController.swift in Sources */,
 				19F0A5CD287CD48200A5D4E6 /* AppDelegate.swift in Sources */,

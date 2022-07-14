@@ -28,29 +28,37 @@ class MenuViewController: UIViewController {
         statusTableView.register(UINib(nibName: "StatusTableViewCell", bundle: nil), forCellReuseIdentifier: StatusTableViewCell.identifier)
     }
     
-        private func showStartViewController(){
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let startViewController = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-            startViewController.modalPresentationStyle = .fullScreen
-            startViewController.modalTransitionStyle = .crossDissolve
-            present(startViewController, animated: true, completion: nil)
-        }
+    private func showStartViewController(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let startViewController = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        startViewController.modalPresentationStyle = .fullScreen
+        startViewController.modalTransitionStyle = .crossDissolve
+        present(startViewController, animated: true, completion: nil)
+    }
     
-    private func showAlertController(message: String, completion: @escaping (UIAlertAction) -> Void){
+    private func showAlertController(message: String, cancelButtonTittle: String, okButtonTittle: String, completion: @escaping (UIAlertAction) -> Void){
         let alertController = UIAlertController(title: "Status Global", message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Нет", style: .cancel, handler: nil))
-        alertController.addAction(UIAlertAction(title: "ДА", style: .default, handler: {ok in
+        alertController.addAction(UIAlertAction(title: cancelButtonTittle, style: .cancel, handler: nil))
+        alertController.addAction(UIAlertAction(title: okButtonTittle, style: .default, handler: {ok in
             completion(ok)
         }))
         present(alertController, animated: true, completion: nil)
     }
     
+    private func showProfileViewController(){
+        let profileViewController = ProfileViewController()
+        profileViewController.delegate = self
+        profileViewController.modalTransitionStyle = .coverVertical
+        profileViewController.modalPresentationStyle = .fullScreen
+        present(profileViewController, animated: true, completion: nil)
+    }
+    
     @IBAction private func backButtonAction(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true)
     }
     
     @IBAction private func logOutButtonAction(_ sender: UIButton) {
-        showAlertController(message: "Вы уверены, что хотите выйти?") {[weak self] ok in
+        showAlertController(message: "Вы уверены, что хотите выйти?", cancelButtonTittle: "Нет", okButtonTittle: "Да") {[weak self] ok in
             guard let self = self else { return }
             do{
                 try Auth.auth().signOut()
@@ -90,11 +98,11 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if isOpenStatusList{
-            if indexPath.row < dataSource.count {
+        if indexPath.row < dataSource.count{
+            if isOpenStatusList {
                 switch dataSource[indexPath.row] {
-                case .busy, .invisible:
-                    showAlertController(message: "") {[weak self] ok in
+                case .busy:
+                    showAlertController(message: "Когда режим  \(dataSource[indexPath.row].rawValue) включен, вы не будете получать никаких уведомлений.", cancelButtonTittle: "Отменить", okButtonTittle: "Продолжить") {[weak self] ok in
                         guard let self = self else {return}
                         self.isOpenStatusList.toggle()
                         self.currentStatus = self.dataSource[indexPath.row]
@@ -102,17 +110,35 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate{
                         self.dataSource.insert(self.currentStatus, at: 0)
                         self.statusTableView.reloadData()
                     }
-                case .online, .away:
-                    isOpenStatusList.toggle()
-                    currentStatus = dataSource[indexPath.row]
-                    dataSource.remove(at: indexPath.row)
-                    dataSource.insert(currentStatus, at: 0)
-                    statusTableView.reloadData()
-                }
+                case .invisible:
+                    showAlertController(message: "В режиме  \(dataSource[indexPath.row].rawValue) чаты открываются без прочтения новых сообщений.", cancelButtonTittle: "Отменить", okButtonTittle: "Продолжить") {[weak self] ok in
+                        guard let self = self else {return}
+                        self.isOpenStatusList.toggle()
+                        self.currentStatus = self.dataSource[indexPath.row]
+                        self.dataSource.remove(at: indexPath.row)
+                        self.dataSource.insert(self.currentStatus, at: 0)
+                        self.statusTableView.reloadData()
+                    }
+                    case .online, .away:
+                        isOpenStatusList.toggle()
+                        currentStatus = dataSource[indexPath.row]
+                        dataSource.remove(at: indexPath.row)
+                        dataSource.insert(currentStatus, at: 0)
+                        statusTableView.reloadData()
+                    }
+            } else {
+                isOpenStatusList.toggle()
+                statusTableView.reloadData()
             }
         } else {
-            isOpenStatusList.toggle()
-            statusTableView.reloadData()
+            showProfileViewController()
         }
+    }
+}
+
+//MARK: - ProfileViewControllerDelegate
+extension MenuViewController: ProfileViewControllerDelegate{
+    func backToContentViewController() {
+        dismiss(animated: true)
     }
 }
