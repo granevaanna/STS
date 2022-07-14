@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseAuth
 import FlagPhoneNumber
+import GoogleSignIn
 
 final class LoginViewController: UIViewController {
     private var listController: FPNCountryListViewController!
@@ -47,6 +49,13 @@ final class LoginViewController: UIViewController {
         present(codeValidViewController, animated: true, completion: nil)
     }
     
+    private func showContentViewController(){
+        let contentViewController = ContentViewController()
+        contentViewController.modalPresentationStyle = .fullScreen
+        contentViewController.modalTransitionStyle = .crossDissolve
+        present(contentViewController, animated: true, completion: nil)
+    }
+    
     @IBAction private func agreementButtonAction(_ sender: UIButton) {
         isAgreement.toggle()
         if isAgreement{
@@ -73,6 +82,14 @@ final class LoginViewController: UIViewController {
     
     
     @IBAction private func singInWithGoogleButtonAction(_ sender: Any) {
+        FirebaseManager.singInWithGoogle(viewController: self) {[weak self] error in
+            guard let self = self else { return }
+            if let error = error{
+                print(error.localizedDescription)
+            } else{
+                self.showContentViewController()
+            }
+        }
     }
 }
 

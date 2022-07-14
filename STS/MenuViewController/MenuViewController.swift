@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 enum UserStatus: String{
     case online = "В сети"
@@ -27,9 +28,27 @@ class MenuViewController: UIViewController {
         statusTableView.register(UINib(nibName: "StatusTableViewCell", bundle: nil), forCellReuseIdentifier: StatusTableViewCell.identifier)
     }
     
+        private func showStartViewController(){
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let startViewController = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+            startViewController.modalPresentationStyle = .fullScreen
+            startViewController.modalTransitionStyle = .crossDissolve
+            present(startViewController, animated: true, completion: nil)
+        }
+    
     @IBAction private func backButtonAction(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction private func logOutButtonAction(_ sender: UIButton) {
+        do{
+            try Auth.auth().signOut()
+            showStartViewController()
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+          }
+    }
+    
 }
 
 //MARK: - UITableViewDataSource, UITableViewDelegate
