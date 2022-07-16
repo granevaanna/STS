@@ -31,6 +31,7 @@ final class ProfileViewController: UIViewController {
         profileTableView.register(UINib(nibName: "ProfilePhotoCell", bundle: nil), forCellReuseIdentifier: ProfilePhotoCell.identifier)
         profileTableView.register(UINib(nibName: "ButtonsTypeProfileCell", bundle: nil), forCellReuseIdentifier: ButtonsTypeProfileCell.identifier)
         profileTableView.register(UINib(nibName: "BasicProfileCell", bundle: nil), forCellReuseIdentifier: BasicProfileCell.identifier)
+        profileTableView.register(UINib(nibName: "AnonymProfileCell", bundle: nil), forCellReuseIdentifier: AnonymProfileCell.identifier)
     }
     
     @IBAction private func backButtonAction(_ sender: UIButton) {
@@ -49,12 +50,15 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate{
         switch dataSource[indexPath.row] {
         case .photoCell:
             let cell = profileTableView.dequeueReusableCell(withIdentifier: ProfilePhotoCell.identifier, for: indexPath)
+            cell.selectionStyle = .none
             return cell
         case .buttonsTypeProfileCell:
             let cell = profileTableView.dequeueReusableCell(withIdentifier: ButtonsTypeProfileCell.identifier, for: indexPath)
+            cell.selectionStyle = .none
             return cell
         case .typeProfileCell:
             let cell = profileTableView.dequeueReusableCell(withIdentifier: BasicProfileCell.identifier, for: indexPath)
+            cell.selectionStyle = .none
             return cell
         }
     }
@@ -64,7 +68,7 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate{
         case .photoCell:
             return CGFloat(300)
         case .buttonsTypeProfileCell:
-            return CGFloat(30)
+            return CGFloat(50)
         case .typeProfileCell:
             return CGFloat(800)
         }
