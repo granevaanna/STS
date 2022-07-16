@@ -40,6 +40,12 @@
 		192C4F5328806392002EF1B0 /* CallsCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192C4F5128806392002EF1B0 /* CallsCollectionCell.xib */; };
 		197E8EFF2880676F00DFF7FA /* CallsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197E8EFE2880676F00DFF7FA /* CallsView.swift */; };
 		197E8F01288067E400DFF7FA /* CallsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 197E8F00288067E400DFF7FA /* CallsView.xib */; };
+		197E8F0B28830BEA00DFF7FA /* ProfilePhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197E8F0928830BEA00DFF7FA /* ProfilePhotoCell.swift */; };
+		197E8F0C28830BEA00DFF7FA /* ProfilePhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 197E8F0A28830BEA00DFF7FA /* ProfilePhotoCell.xib */; };
+		197E8F102883122200DFF7FA /* ButtonsTypeProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197E8F0E2883122200DFF7FA /* ButtonsTypeProfileCell.swift */; };
+		197E8F112883122200DFF7FA /* ButtonsTypeProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 197E8F0F2883122200DFF7FA /* ButtonsTypeProfileCell.xib */; };
+		197E8F172883184700DFF7FA /* BasicProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197E8F152883184700DFF7FA /* BasicProfileCell.swift */; };
+		197E8F182883184700DFF7FA /* BasicProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 197E8F162883184700DFF7FA /* BasicProfileCell.xib */; };
 		19F0A5CD287CD48200A5D4E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0A5CC287CD48200A5D4E6 /* AppDelegate.swift */; };
 		19F0A5CF287CD48200A5D4E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0A5CE287CD48200A5D4E6 /* SceneDelegate.swift */; };
 		19F0A5D1287CD48200A5D4E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0A5D0287CD48200A5D4E6 /* ViewController.swift */; };
@@ -81,6 +87,12 @@
 		192C4F5128806392002EF1B0 /* CallsCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CallsCollectionCell.xib; sourceTree = "<group>"; };
 		197E8EFE2880676F00DFF7FA /* CallsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallsView.swift; sourceTree = "<group>"; };
 		197E8F00288067E400DFF7FA /* CallsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CallsView.xib; sourceTree = "<group>"; };
+		197E8F0928830BEA00DFF7FA /* ProfilePhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoCell.swift; sourceTree = "<group>"; };
+		197E8F0A28830BEA00DFF7FA /* ProfilePhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfilePhotoCell.xib; sourceTree = "<group>"; };
+		197E8F0E2883122200DFF7FA /* ButtonsTypeProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsTypeProfileCell.swift; sourceTree = "<group>"; };
+		197E8F0F2883122200DFF7FA /* ButtonsTypeProfileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonsTypeProfileCell.xib; sourceTree = "<group>"; };
+		197E8F152883184700DFF7FA /* BasicProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicProfileCell.swift; sourceTree = "<group>"; };
+		197E8F162883184700DFF7FA /* BasicProfileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicProfileCell.xib; sourceTree = "<group>"; };
 		19F0A5C9287CD48200A5D4E6 /* STS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F0A5CC287CD48200A5D4E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19F0A5CE287CD48200A5D4E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -232,6 +244,9 @@
 		192C4F3D28804158002EF1B0 /* ProfileViewController */ = {
 			isa = PBXGroup;
 			children = (
+				197E8F122883181A00DFF7FA /* BasicProfileCell */,
+				197E8F0D288311ED00DFF7FA /* ButtonsTypeProfileCell */,
+				197E8F04288308BC00DFF7FA /* PhotoCell */,
 				192C4F3E2880417E002EF1B0 /* ProfileViewController.swift */,
 				192C4F3F2880417E002EF1B0 /* ProfileViewController.xib */,
 			);
@@ -272,6 +287,33 @@
 				197E8F00288067E400DFF7FA /* CallsView.xib */,
 			);
 			path = CallsView;
+			sourceTree = "<group>";
+		};
+		197E8F04288308BC00DFF7FA /* PhotoCell */ = {
+			isa = PBXGroup;
+			children = (
+				197E8F0928830BEA00DFF7FA /* ProfilePhotoCell.swift */,
+				197E8F0A28830BEA00DFF7FA /* ProfilePhotoCell.xib */,
+			);
+			path = PhotoCell;
+			sourceTree = "<group>";
+		};
+		197E8F0D288311ED00DFF7FA /* ButtonsTypeProfileCell */ = {
+			isa = PBXGroup;
+			children = (
+				197E8F0E2883122200DFF7FA /* ButtonsTypeProfileCell.swift */,
+				197E8F0F2883122200DFF7FA /* ButtonsTypeProfileCell.xib */,
+			);
+			path = ButtonsTypeProfileCell;
+			sourceTree = "<group>";
+		};
+		197E8F122883181A00DFF7FA /* BasicProfileCell */ = {
+			isa = PBXGroup;
+			children = (
+				197E8F152883184700DFF7FA /* BasicProfileCell.swift */,
+				197E8F162883184700DFF7FA /* BasicProfileCell.xib */,
+			);
+			path = BasicProfileCell;
 			sourceTree = "<group>";
 		};
 		19F0A5C0287CD48200A5D4E6 = {
@@ -391,6 +433,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				197E8F182883184700DFF7FA /* BasicProfileCell.xib in Resources */,
 				192C4F412880417F002EF1B0 /* ProfileViewController.xib in Resources */,
 				192C4F32287F0701002EF1B0 /* MyViewController.xib in Resources */,
 				192C4F28287F0618002EF1B0 /* ChatsViewController.xib in Resources */,
@@ -403,9 +446,11 @@
 				191F29F5287DA177006746CF /* GoogleService-Info.plist in Resources */,
 				192C4F37287F1825002EF1B0 /* MenuViewController.xib in Resources */,
 				19F0A5D6287CD48400A5D4E6 /* Assets.xcassets in Resources */,
+				197E8F0C28830BEA00DFF7FA /* ProfilePhotoCell.xib in Resources */,
 				192C4F462880578D002EF1B0 /* TabBarCollectionCell.xib in Resources */,
 				197E8F01288067E400DFF7FA /* CallsView.xib in Resources */,
 				192C4F23287F05FC002EF1B0 /* CallsViewController.xib in Resources */,
+				197E8F112883122200DFF7FA /* ButtonsTypeProfileCell.xib in Resources */,
 				19F0A5D4287CD48200A5D4E6 /* Main.storyboard in Resources */,
 				192C4F2D287F06A0002EF1B0 /* ContactsViewController.xib in Resources */,
 			);
@@ -469,15 +514,18 @@
 				192C4F402880417F002EF1B0 /* ProfileViewController.swift in Sources */,
 				192C4F3B287F27C6002EF1B0 /* StatusTableViewCell.swift in Sources */,
 				192C4F2C287F06A0002EF1B0 /* ContactsViewController.swift in Sources */,
+				197E8F0B28830BEA00DFF7FA /* ProfilePhotoCell.swift in Sources */,
 				192C4F452880578D002EF1B0 /* TabBarCollectionCell.swift in Sources */,
 				197E8EFF2880676F00DFF7FA /* CallsView.swift in Sources */,
 				19F0A5CD287CD48200A5D4E6 /* AppDelegate.swift in Sources */,
+				197E8F172883184700DFF7FA /* BasicProfileCell.swift in Sources */,
 				192C4F27287F0618002EF1B0 /* ChatsViewController.swift in Sources */,
 				191F29FE287DAD59006746CF /* UIColors+Extentions.swift in Sources */,
 				191F2A00287DAE59006746CF /* UIButtons+Extentions.swift in Sources */,
 				192C4F31287F0701002EF1B0 /* MyViewController.swift in Sources */,
 				192C4F4D28806057002EF1B0 /* TabBarCallsModel.swift in Sources */,
 				191F2A04287DBC75006746CF /* ContentViewController.swift in Sources */,
+				197E8F102883122200DFF7FA /* ButtonsTypeProfileCell.swift in Sources */,
 				19F0A5CF287CD48200A5D4E6 /* SceneDelegate.swift in Sources */,
 				192C4F5228806392002EF1B0 /* CallsCollectionCell.swift in Sources */,
 			);
