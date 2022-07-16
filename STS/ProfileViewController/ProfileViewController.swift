@@ -14,6 +14,7 @@ protocol ProfileViewControllerDelegate: AnyObject{
 final class ProfileViewController: UIViewController {
     weak var delegate: ProfileViewControllerDelegate?
     @IBOutlet weak var profileTableView: UITableView!
+    private var profileType: ProfileType = .basic
     
     private enum CellTypes{
         case photoCell
@@ -49,17 +50,26 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch dataSource[indexPath.row] {
         case .photoCell:
-            let cell = profileTableView.dequeueReusableCell(withIdentifier: ProfilePhotoCell.identifier, for: indexPath)
+            let cell = profileTableView.dequeueReusableCell(withIdentifier: ProfilePhotoCell.identifier, for: indexPath) as! ProfilePhotoCell
             cell.selectionStyle = .none
             return cell
         case .buttonsTypeProfileCell:
-            let cell = profileTableView.dequeueReusableCell(withIdentifier: ButtonsTypeProfileCell.identifier, for: indexPath)
+            let cell = profileTableView.dequeueReusableCell(withIdentifier: ButtonsTypeProfileCell.identifier, for: indexPath) as! ButtonsTypeProfileCell
             cell.selectionStyle = .none
+            profileType = cell.currentType
+            cell.delegate = self
             return cell
         case .typeProfileCell:
-            let cell = profileTableView.dequeueReusableCell(withIdentifier: BasicProfileCell.identifier, for: indexPath)
-            cell.selectionStyle = .none
-            return cell
+            switch profileType {
+            case .basic:
+                let cell = profileTableView.dequeueReusableCell(withIdentifier: BasicProfileCell.identifier, for: indexPath) as! BasicProfileCell
+                cell.selectionStyle = .none
+                return cell
+            case .anonym:
+                let cell = profileTableView.dequeueReusableCell(withIdentifier: AnonymProfileCell.identifier, for: indexPath) as! AnonymProfileCell
+                cell.selectionStyle = .none
+                return cell
+            }
         }
     }
     
@@ -70,7 +80,19 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate{
         case .buttonsTypeProfileCell:
             return CGFloat(50)
         case .typeProfileCell:
-            return CGFloat(800)
+            switch profileType {
+            case .basic:
+                return CGFloat(770)
+            case .anonym:
+                return CGFloat(570)
+            }
         }
+    }
+}
+
+//MARK: - ButtonsTypeProfileCellDelegate
+extension ProfileViewController: ButtonsTypeProfileCellDelegate{
+    func updateTableView() {
+        profileTableView.reloadData()
     }
 }

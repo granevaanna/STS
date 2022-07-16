@@ -155,15 +155,18 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="СОХРАНИТЬ"/>
+                                        <connections>
+                                            <action selector="saveButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="uS2-Ly-sDF"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="height" constant="600" id="HNd-y2-aad"/>
                             <constraint firstItem="eTa-Jb-jlV" firstAttribute="top" secondItem="3cb-eg-i90" secondAttribute="top" constant="20" id="PFe-Fp-V8x"/>
                             <constraint firstAttribute="bottom" secondItem="eTa-Jb-jlV" secondAttribute="bottom" constant="40" id="UUs-s1-PbR"/>
-                            <constraint firstAttribute="height" constant="600" id="Vy1-kN-7ap"/>
                             <constraint firstAttribute="trailing" secondItem="eTa-Jb-jlV" secondAttribute="trailing" constant="20" id="myn-tF-a1b"/>
                             <constraint firstItem="eTa-Jb-jlV" firstAttribute="leading" secondItem="3cb-eg-i90" secondAttribute="leading" constant="20" id="yRd-lf-kB6"/>
                         </constraints>

@@ -34,15 +34,19 @@ class BasicProfileCell: UITableViewCell {
         endEditing(true)
     }
     
-    @IBAction func textFieldsBeginAction(_ sender: UITextField) {
+    @IBAction private func textFieldsBeginAction(_ sender: UITextField) {
         labels.first(where: { $0.tag == sender.tag})?.isHidden = false
     }
     
-    @IBAction func textFieldsEndAction(_ sender: UITextField) {
+    @IBAction private func textFieldsEndAction(_ sender: UITextField) {
         if let text = textFields.first(where: {$0.tag == sender.tag})?.text, text.isEmpty{
             labels.first(where: { $0.tag == sender.tag})?.isHidden = true
         } else{
             labels.first(where: { $0.tag == sender.tag})?.isHidden = false
         }
+    }
+    
+    @IBAction private func saveButtonAction(_ sender: UIButton) {
+        
     }
 }

@@ -12,13 +12,19 @@ enum ProfileType{
     case anonym
 }
 
+protocol ButtonsTypeProfileCellDelegate: AnyObject{
+    func updateTableView()
+}
+
 class ButtonsTypeProfileCell: UITableViewCell {
     static let identifier = "kButtonsTypeProfileCell"
     
     @IBOutlet private weak var basicProfileButton: UIButton!
     @IBOutlet private weak var anonymProfileButton: UIButton!
     
-    private var currentType: ProfileType = .basic
+    private(set) var currentType: ProfileType = .basic
+    
+    weak var delegate: ButtonsTypeProfileCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,10 +45,10 @@ class ButtonsTypeProfileCell: UITableViewCell {
     
     @IBAction func basicProfileButtonAction(_ sender: Any) {
         setBasicType()
-        
+        delegate?.updateTableView()
     }
     @IBAction func anonymProfileButtonAction(_ sender: Any) {
         setAnonymType()
-        
+        delegate?.updateTableView()
     }
 }
