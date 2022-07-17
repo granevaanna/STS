@@ -13,7 +13,7 @@ enum ProfileType{
 }
 
 protocol ButtonsTypeProfileCellDelegate: AnyObject{
-    func updateTableView()
+    func updateTableView(profileType: ProfileType)
 }
 
 class ButtonsTypeProfileCell: UITableViewCell {
@@ -45,10 +45,10 @@ class ButtonsTypeProfileCell: UITableViewCell {
     
     @IBAction func basicProfileButtonAction(_ sender: Any) {
         setBasicType()
-        delegate?.updateTableView()
+        delegate?.updateTableView(profileType: currentType)
     }
     @IBAction func anonymProfileButtonAction(_ sender: Any) {
         setAnonymType()
-        delegate?.updateTableView()
+        delegate?.updateTableView(profileType: currentType)
     }
 }

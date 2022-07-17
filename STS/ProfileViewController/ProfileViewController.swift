@@ -51,12 +51,12 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate{
         switch dataSource[indexPath.row] {
         case .photoCell:
             let cell = profileTableView.dequeueReusableCell(withIdentifier: ProfilePhotoCell.identifier, for: indexPath) as! ProfilePhotoCell
+            cell.setup(profileType: profileType, photo: UIImage(systemName: "person.circle"), fullName: "fjdkdjkf jdkfjd", phoneNumber: "+3444385")
             cell.selectionStyle = .none
             return cell
         case .buttonsTypeProfileCell:
             let cell = profileTableView.dequeueReusableCell(withIdentifier: ButtonsTypeProfileCell.identifier, for: indexPath) as! ButtonsTypeProfileCell
             cell.selectionStyle = .none
-            profileType = cell.currentType
             cell.delegate = self
             return cell
         case .typeProfileCell:
@@ -92,7 +92,8 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate{
 
 //MARK: - ButtonsTypeProfileCellDelegate
 extension ProfileViewController: ButtonsTypeProfileCellDelegate{
-    func updateTableView() {
+    func updateTableView(profileType: ProfileType) {
+        self.profileType = profileType
         profileTableView.reloadData()
     }
 }
