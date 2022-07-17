@@ -22,20 +22,23 @@ class ProfilePhotoCell: UITableViewCell {
         addPhotoButton.layer.cornerRadius = addPhotoButton.frame.width / 2
     }
 
-    func setup(profileType: ProfileType, photo: UIImage?, fullName: String, phoneNumber: String){
+    func setup(profileType: ProfileType, currentUser: ProfileModel){
         switch profileType {
         case .basic:
-            guard let photo = photo else { return }
-            photoImage.image = photo
             addPhotoButton.isHidden = false
-            nameLabel.text = fullName
             phoneNumberLabel.isHidden = false
-            phoneNumberLabel.text = phoneNumber
+            if let photo = currentUser.image{
+                photoImage.image = photo
+            }
+            nameLabel.text = currentUser.fullName
+            phoneNumberLabel.text = currentUser.phoneNumber
         case .anonym:
             photoImage.image = UIImage(systemName: "person.fill.questionmark")
             addPhotoButton.isHidden = true
-//            nameLabel.text = nickname
             phoneNumberLabel.isHidden = true
+            if let nickname = currentUser.nickname{
+                nameLabel.text = nickname
+            }
         }
     }
 }

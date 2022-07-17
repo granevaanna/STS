@@ -15,6 +15,7 @@ final class ProfileViewController: UIViewController {
     weak var delegate: ProfileViewControllerDelegate?
     @IBOutlet weak var profileTableView: UITableView!
     private var profileType: ProfileType = .basic
+    private var currentUser: ProfileModel = ProfileModel()
     
     private enum CellTypes{
         case photoCell
@@ -51,7 +52,7 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate{
         switch dataSource[indexPath.row] {
         case .photoCell:
             let cell = profileTableView.dequeueReusableCell(withIdentifier: ProfilePhotoCell.identifier, for: indexPath) as! ProfilePhotoCell
-            cell.setup(profileType: profileType, photo: UIImage(systemName: "person.circle"), fullName: "fjdkdjkf jdkfjd", phoneNumber: "+3444385")
+            cell.setup(profileType: profileType, currentUser: currentUser)
             cell.selectionStyle = .none
             return cell
         case .buttonsTypeProfileCell:
