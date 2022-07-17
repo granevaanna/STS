@@ -49,6 +49,7 @@
 		197E8F1C28832CA000DFF7FA /* AnonymProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197E8F1A28832CA000DFF7FA /* AnonymProfileCell.swift */; };
 		197E8F1D28832CA000DFF7FA /* AnonymProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 197E8F1B28832CA000DFF7FA /* AnonymProfileCell.xib */; };
 		199E71D928845AEA00455912 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199E71D828845AEA00455912 /* ProfileModel.swift */; };
+		199E71DE2884651900455912 /* ProfileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199E71DD2884651900455912 /* ProfileType.swift */; };
 		19F0A5CD287CD48200A5D4E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0A5CC287CD48200A5D4E6 /* AppDelegate.swift */; };
 		19F0A5CF287CD48200A5D4E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0A5CE287CD48200A5D4E6 /* SceneDelegate.swift */; };
 		19F0A5D1287CD48200A5D4E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0A5D0287CD48200A5D4E6 /* ViewController.swift */; };
@@ -99,6 +100,7 @@
 		197E8F1A28832CA000DFF7FA /* AnonymProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnonymProfileCell.swift; sourceTree = "<group>"; };
 		197E8F1B28832CA000DFF7FA /* AnonymProfileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnonymProfileCell.xib; sourceTree = "<group>"; };
 		199E71D828845AEA00455912 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		199E71DD2884651900455912 /* ProfileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileType.swift; sourceTree = "<group>"; };
 		19F0A5C9287CD48200A5D4E6 /* STS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F0A5CC287CD48200A5D4E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19F0A5CE287CD48200A5D4E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -231,9 +233,8 @@
 		192C4F33287F17FC002EF1B0 /* MenuViewController */ = {
 			isa = PBXGroup;
 			children = (
-				192C4F38287F279B002EF1B0 /* StatusTableViewCell */,
-				192C4F34287F1825002EF1B0 /* MenuViewController.swift */,
-				192C4F35287F1825002EF1B0 /* MenuViewController.xib */,
+				199E71DF2884657B00455912 /* Views */,
+				199E71E02884658C00455912 /* Controller */,
 			);
 			path = MenuViewController;
 			sourceTree = "<group>";
@@ -250,13 +251,10 @@
 		192C4F3D28804158002EF1B0 /* ProfileViewController */ = {
 			isa = PBXGroup;
 			children = (
+				199E71DC288464FF00455912 /* Enums */,
 				199E71D728845AD300455912 /* Models */,
-				197E8F1928832C8200DFF7FA /* AnonymProfileCell */,
-				197E8F122883181A00DFF7FA /* BasicProfileCell */,
-				197E8F0D288311ED00DFF7FA /* ButtonsTypeProfileCell */,
-				197E8F04288308BC00DFF7FA /* PhotoCell */,
-				192C4F3E2880417E002EF1B0 /* ProfileViewController.swift */,
-				192C4F3F2880417E002EF1B0 /* ProfileViewController.xib */,
+				199E71DA2884644100455912 /* View */,
+				199E71DB2884649800455912 /* Controller */,
 			);
 			path = ProfileViewController;
 			sourceTree = "<group>";
@@ -339,6 +337,51 @@
 				199E71D828845AEA00455912 /* ProfileModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		199E71DA2884644100455912 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				192C4F3F2880417E002EF1B0 /* ProfileViewController.xib */,
+				197E8F04288308BC00DFF7FA /* PhotoCell */,
+				197E8F0D288311ED00DFF7FA /* ButtonsTypeProfileCell */,
+				197E8F122883181A00DFF7FA /* BasicProfileCell */,
+				197E8F1928832C8200DFF7FA /* AnonymProfileCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		199E71DB2884649800455912 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				192C4F3E2880417E002EF1B0 /* ProfileViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		199E71DC288464FF00455912 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				199E71DD2884651900455912 /* ProfileType.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		199E71DF2884657B00455912 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				192C4F35287F1825002EF1B0 /* MenuViewController.xib */,
+				192C4F38287F279B002EF1B0 /* StatusTableViewCell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		199E71E02884658C00455912 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				192C4F34287F1825002EF1B0 /* MenuViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		19F0A5C0287CD48200A5D4E6 = {
@@ -550,6 +593,7 @@
 				192C4F27287F0618002EF1B0 /* ChatsViewController.swift in Sources */,
 				191F29FE287DAD59006746CF /* UIColors+Extentions.swift in Sources */,
 				191F2A00287DAE59006746CF /* UIButtons+Extentions.swift in Sources */,
+				199E71DE2884651900455912 /* ProfileType.swift in Sources */,
 				192C4F31287F0701002EF1B0 /* MyViewController.swift in Sources */,
 				192C4F4D28806057002EF1B0 /* TabBarCallsModel.swift in Sources */,
 				191F2A04287DBC75006746CF /* ContentViewController.swift in Sources */,

@@ -7,11 +7,6 @@
 
 import UIKit
 
-enum ProfileType{
-    case basic
-    case anonym
-}
-
 protocol ButtonsTypeProfileCellDelegate: AnyObject{
     func updateTableView(profileType: ProfileType)
 }
