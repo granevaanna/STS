@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol BasicProfileCellDelegate: AnyObject{
+    func getAditUser(user: ProfileModel)
+}
+
 class BasicProfileCell: UITableViewCell {
     static let identifier = "kBasicProfileCell"
     
@@ -15,7 +19,9 @@ class BasicProfileCell: UITableViewCell {
     @IBOutlet private var textFields: [UITextField]!
     @IBOutlet private weak var saveButton: UIButton!
     
-    private enum textFieldtype: Int{
+    weak var delegate: BasicProfileCellDelegate?
+    
+    private enum TextFieldtype: Int{
         case name = 0
         case surname = 1
         case country = 2
@@ -29,6 +35,24 @@ class BasicProfileCell: UITableViewCell {
         mainView.layer.cornerRadius = 10
         saveButton.mainButton()
     }
+    
+    func setup(currentUser: ProfileModel){
+        textFields.first(where: { $0.tag == TextFieldtype.name.rawValue})?.text = currentUser.name
+        textFields.first(where: { $0.tag == TextFieldtype.surname.rawValue})?.text = currentUser.surname
+        textFields.first(where: { $0.tag == TextFieldtype.country.rawValue})?.text = currentUser.country
+        textFields.first(where: { $0.tag == TextFieldtype.city.rawValue})?.text = currentUser.city
+        textFields.first(where: { $0.tag == TextFieldtype.mail.rawValue})?.text = currentUser.mail
+        textFields.first(where: { $0.tag == TextFieldtype.dateOfBirth.rawValue})?.text = currentUser.dateOfBirth
+        
+        for i in 0...textFields.count - 1 {
+            if textFields[i].text?.isEmpty == nil{
+                labels.first(where: { $0.tag == textFields[i].tag})?.isHidden = false
+            } else {
+                labels.first(where: { $0.tag == textFields[i].tag})?.isHidden = true
+            }
+        }
+    }
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         endEditing(true)
@@ -47,6 +71,22 @@ class BasicProfileCell: UITableViewCell {
     }
     
     @IBAction private func saveButtonAction(_ sender: UIButton) {
+        var currentUser: ProfileModel = ProfileModel()
         
+        guard let name = textFields.first(where: { $0.tag == TextFieldtype.name.rawValue})?.text,
+                let surname = textFields.first(where: { $0.tag == TextFieldtype.surname.rawValue})?.text,
+                let country = textFields.first(where: { $0.tag == TextFieldtype.country.rawValue})?.text,
+                let city = textFields.first(where: { $0.tag == TextFieldtype.city.rawValue})?.text,
+                let mail = textFields.first(where: { $0.tag == TextFieldtype.mail.rawValue})?.text,
+                let dateOfBirth = textFields.first(where: { $0.tag == TextFieldtype.dateOfBirth.rawValue})?.text else {return}
+        
+        currentUser.name = name
+        currentUser.surname = surname
+        currentUser.country = country
+        currentUser.city = city
+        currentUser.mail = mail
+        currentUser.dateOfBirth = dateOfBirth
+        
+        delegate?.getAditUser(user: currentUser)
     }
 }

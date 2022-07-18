@@ -64,6 +64,8 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate{
             switch profileType {
             case .basic:
                 let cell = profileTableView.dequeueReusableCell(withIdentifier: BasicProfileCell.identifier, for: indexPath) as! BasicProfileCell
+                cell.setup(currentUser: currentUser)
+                cell.delegate = self
                 cell.selectionStyle = .none
                 return cell
             case .anonym:
@@ -97,4 +99,14 @@ extension ProfileViewController: ButtonsTypeProfileCellDelegate{
         self.profileType = profileType
         profileTableView.reloadData()
     }
+}
+
+//MARK: - BasicProfileCellDelegate
+extension ProfileViewController: BasicProfileCellDelegate{
+    func getAditUser(user: ProfileModel) {
+        currentUser = user
+        profileTableView.reloadData()
+    }
+    
+    
 }
