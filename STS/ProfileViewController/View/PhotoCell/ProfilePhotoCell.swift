@@ -27,18 +27,16 @@ class ProfilePhotoCell: UITableViewCell {
         case .basic:
             addPhotoButton.isHidden = false
             phoneNumberLabel.isHidden = false
-            if let photo = currentUser.image{
+            if let photo = currentUser.basic.image{
                 photoImage.image = photo
             }
-            nameLabel.text = currentUser.fullName
-            phoneNumberLabel.text = currentUser.phoneNumber
+            nameLabel.text = currentUser.basic.fullName
+            phoneNumberLabel.text = currentUser.basic.phoneNumber
         case .anonym:
             photoImage.image = UIImage(systemName: "person.fill.questionmark")
             addPhotoButton.isHidden = true
             phoneNumberLabel.isHidden = true
-            if let nickname = currentUser.nickname{
-                nameLabel.text = nickname
-            }
+            nameLabel.text = currentUser.anonym.nickname
         }
     }
 }

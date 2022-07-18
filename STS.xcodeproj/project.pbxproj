@@ -50,6 +50,8 @@
 		197E8F1D28832CA000DFF7FA /* AnonymProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 197E8F1B28832CA000DFF7FA /* AnonymProfileCell.xib */; };
 		199E71D928845AEA00455912 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199E71D828845AEA00455912 /* ProfileModel.swift */; };
 		199E71DE2884651900455912 /* ProfileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199E71DD2884651900455912 /* ProfileType.swift */; };
+		199E71E22885B72500455912 /* BasicProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199E71E12885B72500455912 /* BasicProfileModel.swift */; };
+		199E71E42885B74500455912 /* AnonymProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199E71E32885B74500455912 /* AnonymProfileModel.swift */; };
 		19F0A5CD287CD48200A5D4E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0A5CC287CD48200A5D4E6 /* AppDelegate.swift */; };
 		19F0A5CF287CD48200A5D4E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0A5CE287CD48200A5D4E6 /* SceneDelegate.swift */; };
 		19F0A5D1287CD48200A5D4E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0A5D0287CD48200A5D4E6 /* ViewController.swift */; };
@@ -101,6 +103,8 @@
 		197E8F1B28832CA000DFF7FA /* AnonymProfileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnonymProfileCell.xib; sourceTree = "<group>"; };
 		199E71D828845AEA00455912 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		199E71DD2884651900455912 /* ProfileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileType.swift; sourceTree = "<group>"; };
+		199E71E12885B72500455912 /* BasicProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicProfileModel.swift; sourceTree = "<group>"; };
+		199E71E32885B74500455912 /* AnonymProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnonymProfileModel.swift; sourceTree = "<group>"; };
 		19F0A5C9287CD48200A5D4E6 /* STS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F0A5CC287CD48200A5D4E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19F0A5CE287CD48200A5D4E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -335,6 +339,8 @@
 			isa = PBXGroup;
 			children = (
 				199E71D828845AEA00455912 /* ProfileModel.swift */,
+				199E71E12885B72500455912 /* BasicProfileModel.swift */,
+				199E71E32885B74500455912 /* AnonymProfileModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -588,10 +594,12 @@
 				197E8F0B28830BEA00DFF7FA /* ProfilePhotoCell.swift in Sources */,
 				192C4F452880578D002EF1B0 /* TabBarCollectionCell.swift in Sources */,
 				197E8EFF2880676F00DFF7FA /* CallsView.swift in Sources */,
+				199E71E22885B72500455912 /* BasicProfileModel.swift in Sources */,
 				19F0A5CD287CD48200A5D4E6 /* AppDelegate.swift in Sources */,
 				197E8F172883184700DFF7FA /* BasicProfileCell.swift in Sources */,
 				192C4F27287F0618002EF1B0 /* ChatsViewController.swift in Sources */,
 				191F29FE287DAD59006746CF /* UIColors+Extentions.swift in Sources */,
+				199E71E42885B74500455912 /* AnonymProfileModel.swift in Sources */,
 				191F2A00287DAE59006746CF /* UIButtons+Extentions.swift in Sources */,
 				199E71DE2884651900455912 /* ProfileType.swift in Sources */,
 				192C4F31287F0701002EF1B0 /* MyViewController.swift in Sources */,

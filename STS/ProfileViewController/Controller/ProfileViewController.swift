@@ -64,12 +64,14 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate{
             switch profileType {
             case .basic:
                 let cell = profileTableView.dequeueReusableCell(withIdentifier: BasicProfileCell.identifier, for: indexPath) as! BasicProfileCell
-                cell.setup(currentUser: currentUser)
+                cell.setup(currentBasicUser: currentUser.basic)
                 cell.delegate = self
                 cell.selectionStyle = .none
                 return cell
             case .anonym:
                 let cell = profileTableView.dequeueReusableCell(withIdentifier: AnonymProfileCell.identifier, for: indexPath) as! AnonymProfileCell
+                cell.setup(currentAnonymUser: currentUser.anonym)
+                cell.delegate = self
                 cell.selectionStyle = .none
                 return cell
             }
@@ -103,10 +105,16 @@ extension ProfileViewController: ButtonsTypeProfileCellDelegate{
 
 //MARK: - BasicProfileCellDelegate
 extension ProfileViewController: BasicProfileCellDelegate{
-    func getAditUser(user: ProfileModel) {
-        currentUser = user
+    func getBasicAditUser(basicUser: BasicProfileModel) {
+        currentUser.basic = basicUser
         profileTableView.reloadData()
     }
-    
-    
+}
+
+//MARK: AnonymProfileCellDelegate
+extension ProfileViewController: AnonymProfileCellDelegate{
+    func getAnonymAditUser(anonymUser: AnonymProfileModel) {
+        currentUser.anonym = anonymUser
+        profileTableView.reloadData()
+    }
 }

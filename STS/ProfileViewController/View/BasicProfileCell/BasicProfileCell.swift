@@ -8,7 +8,7 @@
 import UIKit
 
 protocol BasicProfileCellDelegate: AnyObject{
-    func getAditUser(user: ProfileModel)
+    func getBasicAditUser(basicUser: BasicProfileModel)
 }
 
 class BasicProfileCell: UITableViewCell {
@@ -36,13 +36,13 @@ class BasicProfileCell: UITableViewCell {
         saveButton.mainButton()
     }
     
-    func setup(currentUser: ProfileModel){
-        textFields.first(where: { $0.tag == TextFieldtype.name.rawValue})?.text = currentUser.name
-        textFields.first(where: { $0.tag == TextFieldtype.surname.rawValue})?.text = currentUser.surname
-        textFields.first(where: { $0.tag == TextFieldtype.country.rawValue})?.text = currentUser.country
-        textFields.first(where: { $0.tag == TextFieldtype.city.rawValue})?.text = currentUser.city
-        textFields.first(where: { $0.tag == TextFieldtype.mail.rawValue})?.text = currentUser.mail
-        textFields.first(where: { $0.tag == TextFieldtype.dateOfBirth.rawValue})?.text = currentUser.dateOfBirth
+    func setup(currentBasicUser: BasicProfileModel){
+        textFields.first(where: { $0.tag == TextFieldtype.name.rawValue})?.text = currentBasicUser.name
+        textFields.first(where: { $0.tag == TextFieldtype.surname.rawValue})?.text = currentBasicUser.surname
+        textFields.first(where: { $0.tag == TextFieldtype.country.rawValue})?.text = currentBasicUser.country
+        textFields.first(where: { $0.tag == TextFieldtype.city.rawValue})?.text = currentBasicUser.city
+        textFields.first(where: { $0.tag == TextFieldtype.mail.rawValue})?.text = currentBasicUser.mail
+        textFields.first(where: { $0.tag == TextFieldtype.dateOfBirth.rawValue})?.text = currentBasicUser.dateOfBirth
         
         for i in 0...textFields.count - 1 {
             if textFields[i].text?.isEmpty == nil{
@@ -71,7 +71,7 @@ class BasicProfileCell: UITableViewCell {
     }
     
     @IBAction private func saveButtonAction(_ sender: UIButton) {
-        var currentUser: ProfileModel = ProfileModel()
+        var currentUser: BasicProfileModel = BasicProfileModel()
         
         guard let name = textFields.first(where: { $0.tag == TextFieldtype.name.rawValue})?.text,
                 let surname = textFields.first(where: { $0.tag == TextFieldtype.surname.rawValue})?.text,
@@ -87,6 +87,6 @@ class BasicProfileCell: UITableViewCell {
         currentUser.mail = mail
         currentUser.dateOfBirth = dateOfBirth
         
-        delegate?.getAditUser(user: currentUser)
+        delegate?.getBasicAditUser(basicUser: currentUser)
     }
 }
