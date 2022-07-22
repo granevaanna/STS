@@ -8,6 +8,5 @@ target 'STS' do
   # Pods for STS
 pod "FlagPhoneNumber"
 pod 'GoogleSignIn'
-pod 'FirebaseFirestore'
 
 end
