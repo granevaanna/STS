@@ -63,7 +63,7 @@ final class CodeValidViewController: UIViewController {
     }
     
     @IBAction private func confirmCodeButtonAction(_ sender: UIButton) {
-        FirebaseManager.singInWithPhoneNumber(verificationID: verificationID, verificationCode: codeTextView.text) { [weak self] error in
+        AuthService.singInWithPhoneNumber(verificationID: verificationID, verificationCode: codeTextView.text) { [weak self] error in
             guard let self = self else { return }
             if error != nil {
                 self.incorrectCodeLabel.isHidden = false
@@ -78,7 +78,7 @@ final class CodeValidViewController: UIViewController {
         sendCodeAgainButton.blockButton()
         startTimer()
         
-        FirebaseManager.verifyPhoneNumber(phoneNumber: phoneNumber) { [weak self] verificationID in
+        AuthService.verifyPhoneNumber(phoneNumber: phoneNumber) { [weak self] verificationID in
             guard let self = self else { return }
             self.verificationID = verificationID
         }

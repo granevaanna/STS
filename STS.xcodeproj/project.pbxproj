@@ -18,7 +18,7 @@
 		191F2A00287DAE59006746CF /* UIButtons+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191F29FF287DAE59006746CF /* UIButtons+Extentions.swift */; };
 		191F2A04287DBC75006746CF /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191F2A02287DBC75006746CF /* ContentViewController.swift */; };
 		191F2A05287DBC75006746CF /* ContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 191F2A03287DBC75006746CF /* ContentViewController.xib */; };
-		191F2A07287DF817006746CF /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191F2A06287DF817006746CF /* FirebaseManager.swift */; };
+		191F2A07287DF817006746CF /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191F2A06287DF817006746CF /* AuthService.swift */; };
 		192C4F22287F05FC002EF1B0 /* CallsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192C4F20287F05FC002EF1B0 /* CallsViewController.swift */; };
 		192C4F23287F05FC002EF1B0 /* CallsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192C4F21287F05FC002EF1B0 /* CallsViewController.xib */; };
 		192C4F27287F0618002EF1B0 /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192C4F25287F0618002EF1B0 /* ChatsViewController.swift */; };
@@ -52,6 +52,7 @@
 		199E71DE2884651900455912 /* ProfileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199E71DD2884651900455912 /* ProfileType.swift */; };
 		199E71E22885B72500455912 /* BasicProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199E71E12885B72500455912 /* BasicProfileModel.swift */; };
 		199E71E42885B74500455912 /* AnonymProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199E71E32885B74500455912 /* AnonymProfileModel.swift */; };
+		19A1CD6A288701F0001790D6 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1CD69288701F0001790D6 /* FirestoreService.swift */; };
 		19F0A5CD287CD48200A5D4E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0A5CC287CD48200A5D4E6 /* AppDelegate.swift */; };
 		19F0A5CF287CD48200A5D4E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0A5CE287CD48200A5D4E6 /* SceneDelegate.swift */; };
 		19F0A5D1287CD48200A5D4E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0A5D0287CD48200A5D4E6 /* ViewController.swift */; };
@@ -71,7 +72,7 @@
 		191F29FF287DAE59006746CF /* UIButtons+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButtons+Extentions.swift"; sourceTree = "<group>"; };
 		191F2A02287DBC75006746CF /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		191F2A03287DBC75006746CF /* ContentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentViewController.xib; sourceTree = "<group>"; };
-		191F2A06287DF817006746CF /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		191F2A06287DF817006746CF /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		192C4F20287F05FC002EF1B0 /* CallsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallsViewController.swift; sourceTree = "<group>"; };
 		192C4F21287F05FC002EF1B0 /* CallsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CallsViewController.xib; sourceTree = "<group>"; };
 		192C4F25287F0618002EF1B0 /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +106,7 @@
 		199E71DD2884651900455912 /* ProfileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileType.swift; sourceTree = "<group>"; };
 		199E71E12885B72500455912 /* BasicProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicProfileModel.swift; sourceTree = "<group>"; };
 		199E71E32885B74500455912 /* AnonymProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnonymProfileModel.swift; sourceTree = "<group>"; };
+		19A1CD69288701F0001790D6 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		19F0A5C9287CD48200A5D4E6 /* STS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F0A5CC287CD48200A5D4E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19F0A5CE287CD48200A5D4E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -390,6 +392,15 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		19A1CD682887018A001790D6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				191F2A06287DF817006746CF /* AuthService.swift */,
+				19A1CD69288701F0001790D6 /* FirestoreService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		19F0A5C0287CD48200A5D4E6 = {
 			isa = PBXGroup;
 			children = (
@@ -411,7 +422,7 @@
 		19F0A5CB287CD48200A5D4E6 /* STS */ = {
 			isa = PBXGroup;
 			children = (
-				191F2A06287DF817006746CF /* FirebaseManager.swift */,
+				19A1CD682887018A001790D6 /* Services */,
 				191F29FC287DAD43006746CF /* Extentions */,
 				192C4F1C287F048D002EF1B0 /* LoginViewControllers */,
 				191F2A01287DBC42006746CF /* ContentViewController */,
@@ -584,7 +595,8 @@
 				191F29EA287D9669006746CF /* LoginViewController.swift in Sources */,
 				19F0A5D1287CD48200A5D4E6 /* ViewController.swift in Sources */,
 				192C4F36287F1825002EF1B0 /* MenuViewController.swift in Sources */,
-				191F2A07287DF817006746CF /* FirebaseManager.swift in Sources */,
+				191F2A07287DF817006746CF /* AuthService.swift in Sources */,
+				19A1CD6A288701F0001790D6 /* FirestoreService.swift in Sources */,
 				199E71D928845AEA00455912 /* ProfileModel.swift in Sources */,
 				197E8F1C28832CA000DFF7FA /* AnonymProfileCell.swift in Sources */,
 				192C4F22287F05FC002EF1B0 /* CallsViewController.swift in Sources */,

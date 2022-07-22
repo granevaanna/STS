@@ -71,7 +71,7 @@ final class LoginViewController: UIViewController {
     }
     
     @IBAction private func continueButtonAction(_ sender: UIButton) {
-        FirebaseManager.verifyPhoneNumber(phoneNumber: phoneNumber) { [weak self] verificationID in
+        AuthService.verifyPhoneNumber(phoneNumber: phoneNumber) { [weak self] verificationID in
             guard let self = self else {return}
             DispatchQueue.main.async {
                 guard let verificationID = verificationID else { return }
@@ -82,7 +82,7 @@ final class LoginViewController: UIViewController {
     
     
     @IBAction private func singInWithGoogleButtonAction(_ sender: Any) {
-        FirebaseManager.singInWithGoogle(viewController: self) {[weak self] error in
+        AuthService.singInWithGoogle(viewController: self) {[weak self] error in
             guard let self = self else { return }
             if let error = error{
                 print(error.localizedDescription)
