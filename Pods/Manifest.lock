@@ -8,6 +8,7 @@ PODS:
   - FlagPhoneNumber (0.8.0):
     - FlagPhoneNumber/libPhoneNumberiOS (= 0.8.0)
   - FlagPhoneNumber/libPhoneNumberiOS (0.8.0)
+  - FSCalendar (2.8.4)
   - GoogleSignIn (6.2.2):
     - AppAuth (~> 1.5)
     - GTMAppAuth (~> 1.3)
@@ -19,12 +20,14 @@ PODS:
 
 DEPENDENCIES:
   - FlagPhoneNumber
+  - FSCalendar
   - GoogleSignIn
 
 SPEC REPOS:
   trunk:
     - AppAuth
     - FlagPhoneNumber
+    - FSCalendar
     - GoogleSignIn
     - GTMAppAuth
     - GTMSessionFetcher
@@ -32,10 +35,11 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AppAuth: 80317d99ac7ff2801a2f18ff86b48cd315ed465d
   FlagPhoneNumber: 3712455b95f66cb0f2016fef7d9e34cddf8c7f9a
+  FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
   GoogleSignIn: 3c68388ac221f379676e8f1cb115df3aaf73b93f
   GTMAppAuth: 4d8f864896f3646f0c33baf38a28362f4c601e15
   GTMSessionFetcher: 5595ec75acf5be50814f81e9189490412bad82ba
 
-PODFILE CHECKSUM: aab2f51cc1451cef453d325f11295f2ef3546dac
+PODFILE CHECKSUM: 5ea81b2955761cd4b15beb12a0d9a3e987c55735
 
 COCOAPODS: 1.8.4
