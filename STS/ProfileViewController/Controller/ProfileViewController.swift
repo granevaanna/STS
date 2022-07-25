@@ -111,6 +111,7 @@ extension ProfileViewController: ButtonsTypeProfileCellDelegate{
 extension ProfileViewController: BasicProfileCellDelegate{
     func showCalendarView() {
         calendarView.isHidden = false
+        profileTableView.isUserInteractionEnabled = false
     }
     
     func getBasicAditUser(basicUser: BasicProfileModel) {
@@ -131,9 +132,11 @@ extension ProfileViewController: AnonymProfileCellDelegate{
 extension ProfileViewController: CalendarViewDelegate{
     func okAction() {
         calendarView.isHidden = true
+        profileTableView.isUserInteractionEnabled = true
     }
     
     func cancelAction() {
         calendarView.isHidden = true
+        profileTableView.isUserInteractionEnabled = true
     }
 }
