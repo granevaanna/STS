@@ -9,6 +9,7 @@ import UIKit
 
 protocol BasicProfileCellDelegate: AnyObject{
     func getBasicAditUser(basicUser: BasicProfileModel)
+    func showCalendarView()
 }
 
 class BasicProfileCell: UITableViewCell {
@@ -60,6 +61,11 @@ class BasicProfileCell: UITableViewCell {
     
     @IBAction private func textFieldsBeginAction(_ sender: UITextField) {
         labels.first(where: { $0.tag == sender.tag})?.isHidden = false
+        
+        if sender.tag == TextFieldtype.dateOfBirth.rawValue{
+            endEditing(true)
+            delegate?.showCalendarView()
+        }
     }
     
     @IBAction private func textFieldsEndAction(_ sender: UITextField) {

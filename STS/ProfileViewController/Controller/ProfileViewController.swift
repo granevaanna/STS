@@ -13,7 +13,9 @@ protocol ProfileViewControllerDelegate: AnyObject{
 
 final class ProfileViewController: UIViewController {
     weak var delegate: ProfileViewControllerDelegate?
-    @IBOutlet weak var profileTableView: UITableView!
+    @IBOutlet private weak var profileTableView: UITableView!
+    @IBOutlet private weak var calendarView: CalendarView!
+    
     private var profileType: ProfileType = .basic
     private var currentUser: ProfileModel = ProfileModel()
     
@@ -34,6 +36,8 @@ final class ProfileViewController: UIViewController {
         profileTableView.register(UINib(nibName: "ButtonsTypeProfileCell", bundle: nil), forCellReuseIdentifier: ButtonsTypeProfileCell.identifier)
         profileTableView.register(UINib(nibName: "BasicProfileCell", bundle: nil), forCellReuseIdentifier: BasicProfileCell.identifier)
         profileTableView.register(UINib(nibName: "AnonymProfileCell", bundle: nil), forCellReuseIdentifier: AnonymProfileCell.identifier)
+        
+        calendarView.delegate = self
     }
     
     @IBAction private func backButtonAction(_ sender: UIButton) {
@@ -105,6 +109,10 @@ extension ProfileViewController: ButtonsTypeProfileCellDelegate{
 
 //MARK: - BasicProfileCellDelegate
 extension ProfileViewController: BasicProfileCellDelegate{
+    func showCalendarView() {
+        calendarView.isHidden = false
+    }
+    
     func getBasicAditUser(basicUser: BasicProfileModel) {
         currentUser.basic = basicUser
         profileTableView.reloadData()
@@ -116,5 +124,16 @@ extension ProfileViewController: AnonymProfileCellDelegate{
     func getAnonymAditUser(anonymUser: AnonymProfileModel) {
         currentUser.anonym = anonymUser
         profileTableView.reloadData()
+    }
+}
+
+//MARK: - CalendarViewDelegate
+extension ProfileViewController: CalendarViewDelegate{
+    func okAction() {
+        calendarView.isHidden = true
+    }
+    
+    func cancelAction() {
+        calendarView.isHidden = true
     }
 }

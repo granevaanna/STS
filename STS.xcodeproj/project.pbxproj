@@ -52,6 +52,8 @@
 		199E71DE2884651900455912 /* ProfileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199E71DD2884651900455912 /* ProfileType.swift */; };
 		199E71E22885B72500455912 /* BasicProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199E71E12885B72500455912 /* BasicProfileModel.swift */; };
 		199E71E42885B74500455912 /* AnonymProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199E71E32885B74500455912 /* AnonymProfileModel.swift */; };
+		19BA42FA288EB6340054B424 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BA42F9288EB6340054B424 /* CalendarView.swift */; };
+		19BA42FC288EB67D0054B424 /* CalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19BA42FB288EB67D0054B424 /* CalendarView.xib */; };
 		19F0A5CD287CD48200A5D4E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0A5CC287CD48200A5D4E6 /* AppDelegate.swift */; };
 		19F0A5CF287CD48200A5D4E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0A5CE287CD48200A5D4E6 /* SceneDelegate.swift */; };
 		19F0A5D1287CD48200A5D4E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F0A5D0287CD48200A5D4E6 /* ViewController.swift */; };
@@ -105,6 +107,8 @@
 		199E71DD2884651900455912 /* ProfileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileType.swift; sourceTree = "<group>"; };
 		199E71E12885B72500455912 /* BasicProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicProfileModel.swift; sourceTree = "<group>"; };
 		199E71E32885B74500455912 /* AnonymProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnonymProfileModel.swift; sourceTree = "<group>"; };
+		19BA42F9288EB6340054B424 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		19BA42FB288EB67D0054B424 /* CalendarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarView.xib; sourceTree = "<group>"; };
 		19F0A5C9287CD48200A5D4E6 /* STS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F0A5CC287CD48200A5D4E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19F0A5CE287CD48200A5D4E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -349,6 +353,7 @@
 			isa = PBXGroup;
 			children = (
 				192C4F3F2880417E002EF1B0 /* ProfileViewController.xib */,
+				19BA42F8288EB5E90054B424 /* CalendarView */,
 				197E8F04288308BC00DFF7FA /* PhotoCell */,
 				197E8F0D288311ED00DFF7FA /* ButtonsTypeProfileCell */,
 				197E8F122883181A00DFF7FA /* BasicProfileCell */,
@@ -388,6 +393,15 @@
 				192C4F34287F1825002EF1B0 /* MenuViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		19BA42F8288EB5E90054B424 /* CalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				19BA42F9288EB6340054B424 /* CalendarView.swift */,
+				19BA42FB288EB67D0054B424 /* CalendarView.xib */,
+			);
+			path = CalendarView;
 			sourceTree = "<group>";
 		};
 		19F0A5C0287CD48200A5D4E6 = {
@@ -527,6 +541,7 @@
 				192C4F23287F05FC002EF1B0 /* CallsViewController.xib in Resources */,
 				197E8F112883122200DFF7FA /* ButtonsTypeProfileCell.xib in Resources */,
 				19F0A5D4287CD48200A5D4E6 /* Main.storyboard in Resources */,
+				19BA42FC288EB67D0054B424 /* CalendarView.xib in Resources */,
 				192C4F2D287F06A0002EF1B0 /* ContactsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -587,6 +602,7 @@
 				191F2A07287DF817006746CF /* FirebaseManager.swift in Sources */,
 				199E71D928845AEA00455912 /* ProfileModel.swift in Sources */,
 				197E8F1C28832CA000DFF7FA /* AnonymProfileCell.swift in Sources */,
+				19BA42FA288EB6340054B424 /* CalendarView.swift in Sources */,
 				192C4F22287F05FC002EF1B0 /* CallsViewController.swift in Sources */,
 				192C4F402880417F002EF1B0 /* ProfileViewController.swift in Sources */,
 				192C4F3B287F27C6002EF1B0 /* StatusTableViewCell.swift in Sources */,
