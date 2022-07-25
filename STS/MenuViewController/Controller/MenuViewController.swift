@@ -17,12 +17,19 @@ enum UserStatus: String{
 
 class MenuViewController: UIViewController {
     @IBOutlet private weak var statusTableView: UITableView!
+    @IBOutlet private weak var fullNameLabel: UILabel!
+    @IBOutlet private weak var phoneNumberLabel: UILabel!
+    
     private var dataSource: [UserStatus] = []
     private var currentStatus: UserStatus = .online
     private var isOpenStatusList: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let currentPhoneNumber = FirebaseManager.getPhoneNumber(){
+            phoneNumberLabel.text = currentPhoneNumber
+        }
+        
         statusTableView.dataSource = self
         statusTableView.delegate = self
         statusTableView.register(UINib(nibName: "StatusTableViewCell", bundle: nil), forCellReuseIdentifier: StatusTableViewCell.identifier)

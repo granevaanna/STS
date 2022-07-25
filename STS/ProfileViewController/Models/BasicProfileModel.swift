@@ -25,7 +25,7 @@ struct BasicProfileModel{
     init(){
         name = ""
         surname = ""
-        if let currentUserPhoneNumber = Auth.auth().currentUser?.phoneNumber{
+        if let currentUserPhoneNumber = FirebaseManager.getPhoneNumber(){
             phoneNumber = currentUserPhoneNumber
         } else{
             phoneNumber = ""

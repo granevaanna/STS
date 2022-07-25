@@ -56,4 +56,8 @@ struct FirebaseManager{
             }
         }
     }
+    
+    static func getPhoneNumber() -> String?{
+        return Auth.auth().currentUser?.phoneNumber
+    }
 }
